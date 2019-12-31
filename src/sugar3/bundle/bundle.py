@@ -115,7 +115,7 @@ class Bundle(object):
         if self._zip_file is None:
             path = os.path.join(self._path, filename)
             try:
-                f = open(path, 'rb')
+                f = open(path, 'r')
             except IOError:
                 logging.debug("cannot open path %s" % path)
                 return None
@@ -123,7 +123,12 @@ class Bundle(object):
             path = os.path.join(self._zip_root_dir, filename)
             try:
                 data = self._zip_file.read(path)
-                f = six.BytesIO(data)
+                if type(data) is bytes:
+                    f = six.StringIO(data.decode('utf-8'))
+                elif type(data) is str:              
+                    f = six.StringIO(data)
+                else:
+                    raise Exception("A Unhandled Error has occurred. 'data' is not a string like object")
             except KeyError:
                 logging.debug('%s not found in zip %s.' % (filename, path))
                 return None
