@@ -145,8 +145,7 @@ class Builder(object):
 
             localedir = os.path.join(self.config.build_dir, 'locale', lang)
             mo_path = os.path.join(localedir, 'LC_MESSAGES')
-            if not os.path.isdir(mo_path):
-                os.makedirs(mo_path)
+            os.makedirs(mo_path, exist_ok=True)
 
             mo_file = os.path.join(mo_path, '%s.mo' % self.config.bundle_id)
             args = ['msgfmt', '--output-file=%s' % mo_file, file_name]
@@ -313,8 +312,7 @@ class Installer(Packager):
             print('Install %s' % (dest))
 
             path = os.path.dirname(dest)
-            if not os.path.exists(path):
-                os.makedirs(path)
+            os.makedirs(path, exist_ok=True)
 
             shutil.copy(source, dest)
 
@@ -363,8 +361,7 @@ class Installer(Packager):
         name = '{}.activity.desktop'.format(self.config.bundle_id)
         path = os.path.join(destdir, os.path.relpath(prefix, '/'),
                             'share', 'applications', name)
-        if not os.path.isdir(os.path.dirname(path)):
-            os.makedirs(os.path.dirname(path))
+        os.makedirs(os.path.dirname(path), exist_ok=True)
         with open(path, 'w') as f:
             cp.write(f)
         print('Install %s' % (path))
@@ -423,8 +420,7 @@ class Installer(Packager):
         path = os.path.join(destdir, os.path.relpath(prefix, '/'),
                             'share', 'metainfo',
                             self.config.bundle_id + '.appdata.xml')
-        if not os.path.isdir(os.path.dirname(path)):
-            os.makedirs(os.path.dirname(path))
+        os.makedirs(os.path.dirname(path), exist_ok=True)
         tree = ET.ElementTree(root)
         tree.write(path, encoding='UTF-8')
         print('Install %s' % (path))
