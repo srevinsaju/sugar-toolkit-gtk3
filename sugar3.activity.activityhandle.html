@@ -1,0 +1,148 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>sugar3.activity.activityhandle module &#8212; Sugar Toolkit GTK3 0.118 documentation</title>
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '0.118',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="sugar3.activity.activityinstance module" href="sugar3.activity.activityinstance.html" />
+    <link rel="prev" title="sugar3.activity.activityfactory module" href="sugar3.activity.activityfactory.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head>
+  <body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="module-sugar3.activity.activityhandle">
+<span id="sugar3-activity-activityhandle-module"></span><h1>sugar3.activity.activityhandle module<a class="headerlink" href="#module-sugar3.activity.activityhandle" title="Permalink to this headline">¶</a></h1>
+<p>Provides a class for storing activity metadata such as activity id’s,
+journal object id’s,</p>
+<dl class="class">
+<dt id="sugar3.activity.activityhandle.ActivityHandle">
+<em class="property">class </em><code class="descclassname">sugar3.activity.activityhandle.</code><code class="descname">ActivityHandle</code><span class="sig-paren">(</span><em>activity_id=None</em>, <em>object_id=None</em>, <em>uri=None</em>, <em>invited=False</em><span class="sig-paren">)</span><a class="headerlink" href="#sugar3.activity.activityhandle.ActivityHandle" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">object</span></code></p>
+<p>Data structure storing simple activity metadata</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>activity_id</strong> (<em>string</em>) – unique id for the activity to be</li>
+<li><strong>created</strong> – </li>
+<li><strong>object_id</strong> (<em>string</em>) – identity of the journal object</li>
+<li><strong>with the activity.</strong> (<em>associated</em>) – </li>
+<li><strong>you resume an activity from the journal</strong> (<em>When</em>) – </li>
+<li><strong>object_id will be passed in. It is optional</strong> (<em>the</em>) – </li>
+<li><strong>new activities does not have an</strong> (<em>since</em>) – </li>
+<li><strong>object.</strong> (<em>associated</em>) – </li>
+<li><strong>uri</strong> (<em>string</em>) – URI associated with the activity. Used when</li>
+<li><strong>an external file</strong><strong> or </strong><strong>resource in the</strong> (<em>opening</em>) – </li>
+<li><strong>rather than a journal object</strong> (<a class="reference internal" href="sugar3.activity.html#module-sugar3.activity" title="sugar3.activity"><em>activity</em></a><em>,</em>) – </li>
+<li><strong>stored on the file system for</strong> (<em>(</em><em>downloads</em>) – </li>
+<li><strong>or web pages</strong><strong>)</strong> (<em>example</em>) – </li>
+<li><strong>invited</strong> (<em>bool</em>) – True if the activity is being</li>
+<li><strong>for handling an invite from the network</strong> (<em>launched</em>) – </li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<dl class="method">
+<dt id="sugar3.activity.activityhandle.ActivityHandle.get_dict">
+<code class="descname">get_dict</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sugar3.activity.activityhandle.ActivityHandle.get_dict" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns activity settings as a dictionary in format
+{activity_id:XXXX, object_id:XXXX, uri:XXXX, invited:BOOL}</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="function">
+<dt id="sugar3.activity.activityhandle.create_from_dict">
+<code class="descclassname">sugar3.activity.activityhandle.</code><code class="descname">create_from_dict</code><span class="sig-paren">(</span><em>handle_dict</em><span class="sig-paren">)</span><a class="headerlink" href="#sugar3.activity.activityhandle.create_from_dict" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns an activity handle from a dictionary of parameters</p>
+</dd></dl>
+
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper"><div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+  <li><a href="sugar3.html">sugar3 package</a><ul>
+  <li><a href="sugar3.activity.html">sugar3.activity package</a><ul>
+      <li>Previous: <a href="sugar3.activity.activityfactory.html" title="previous chapter">sugar3.activity.activityfactory module</a></li>
+      <li>Next: <a href="sugar3.activity.activityinstance.html" title="next chapter">sugar3.activity.activityinstance module</a></li>
+  </ul></li>
+  </ul></li>
+  </ul></li>
+</ul>
+</div>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/sugar3.activity.activityhandle.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2017, Sugar Labs.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.6.7</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.8</a>
+      
+      |
+      <a href="_sources/sugar3.activity.activityhandle.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

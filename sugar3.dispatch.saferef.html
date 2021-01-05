@@ -1,0 +1,215 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>sugar3.dispatch.saferef module &#8212; Sugar Toolkit GTK3 0.118 documentation</title>
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '0.118',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="sugar3.graphics package" href="sugar3.graphics.html" />
+    <link rel="prev" title="sugar3.dispatch.dispatcher module" href="sugar3.dispatch.dispatcher.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head>
+  <body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="module-sugar3.dispatch.saferef">
+<span id="sugar3-dispatch-saferef-module"></span><h1>sugar3.dispatch.saferef module<a class="headerlink" href="#module-sugar3.dispatch.saferef" title="Permalink to this headline">¶</a></h1>
+<p>“Safe weakrefs”, originally from pyDispatcher.</p>
+<p>Provides a way to safely weakref any function, including bound methods (which
+aren’t handled by the core weakref module).</p>
+<dl class="class">
+<dt id="sugar3.dispatch.saferef.BoundMethodWeakref">
+<em class="property">class </em><code class="descclassname">sugar3.dispatch.saferef.</code><code class="descname">BoundMethodWeakref</code><span class="sig-paren">(</span><em>target</em>, <em>onDelete=None</em><span class="sig-paren">)</span><a class="headerlink" href="#sugar3.dispatch.saferef.BoundMethodWeakref" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">object</span></code></p>
+<p>‘Safe’ and reusable weak references to instance methods</p>
+<p>BoundMethodWeakref objects provide a mechanism for
+referencing a bound method without requiring that the
+method object itself (which is normally a transient
+object) is kept alive.  Instead, the BoundMethodWeakref
+object keeps weak references to both the object and the
+function which together define the instance method.</p>
+<dl class="attribute">
+<dt>
+<code class="descname">key -- the identity key for the reference, calculated</code></dt>
+<dd><p>by the class’s calculateKey method applied to the
+target instance method</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt>
+<code class="descname">deletionMethods -- sequence of callable objects taking</code></dt>
+<dd><p>single argument, a reference to this object which
+will be called when <em>either</em> the target object or
+target function is garbage collected (i.e. when
+this object becomes invalid).  These are specified
+as the onDelete parameters of safeRef calls.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt>
+<code class="descname">weakSelf -- weak reference to the target object</code></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt>
+<code class="descname">weakFunc -- weak reference to the target function</code></dt>
+<dd></dd></dl>
+
+<dl class="docutils">
+<dt>Class Attributes:</dt>
+<dd><dl class="first last docutils">
+<dt>_allInstances – class attribute pointing to all live</dt>
+<dd>BoundMethodWeakref objects indexed by the class’s
+calculateKey(target) method applied to the target
+objects.  This weak value dictionary is used to
+short-circuit creation so that multiple references
+to the same (object, function) pair produce the
+same BoundMethodWeakref instance.</dd>
+</dl>
+</dd>
+</dl>
+<dl class="classmethod">
+<dt id="sugar3.dispatch.saferef.BoundMethodWeakref.calculateKey">
+<em class="property">classmethod </em><code class="descname">calculateKey</code><span class="sig-paren">(</span><em>target</em><span class="sig-paren">)</span><a class="headerlink" href="#sugar3.dispatch.saferef.BoundMethodWeakref.calculateKey" title="Permalink to this definition">¶</a></dt>
+<dd><p>Calculate the reference key for this reference</p>
+<p>Currently this is a two-tuple of the id()’s of the
+target object and the target function respectively.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="sugar3.dispatch.saferef.BoundNonDescriptorMethodWeakref">
+<em class="property">class </em><code class="descclassname">sugar3.dispatch.saferef.</code><code class="descname">BoundNonDescriptorMethodWeakref</code><span class="sig-paren">(</span><em>target</em>, <em>onDelete=None</em><span class="sig-paren">)</span><a class="headerlink" href="#sugar3.dispatch.saferef.BoundNonDescriptorMethodWeakref" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#sugar3.dispatch.saferef.BoundMethodWeakref" title="sugar3.dispatch.saferef.BoundMethodWeakref"><code class="xref py py-class docutils literal"><span class="pre">sugar3.dispatch.saferef.BoundMethodWeakref</span></code></a></p>
+<p>A specialized BoundMethodWeakref, for platforms where instance methods
+are not descriptors.</p>
+<p>It assumes that the function name and the target attribute name are the
+same, instead of assuming that the function is a descriptor. This approach
+is equally fast, but not 100% reliable because functions can be stored on
+an attribute named differenty than the function’s name such as in:</p>
+<p>class A: pass
+def foo(self): return “foo”
+A.bar = foo</p>
+<p>But this shouldn’t be a common use case. So, on platforms where methods
+aren’t descriptors (such as Jython) this implementation has the advantage
+of working in the most cases.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="sugar3.dispatch.saferef.get_bound_method_weakref">
+<code class="descclassname">sugar3.dispatch.saferef.</code><code class="descname">get_bound_method_weakref</code><span class="sig-paren">(</span><em>target</em>, <em>onDelete</em><span class="sig-paren">)</span><a class="headerlink" href="#sugar3.dispatch.saferef.get_bound_method_weakref" title="Permalink to this definition">¶</a></dt>
+<dd><p>Instantiates the appropiate BoundMethodWeakRef, depending on the
+details of the underlying class method implementation</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="sugar3.dispatch.saferef.im_func">
+<code class="descclassname">sugar3.dispatch.saferef.</code><code class="descname">im_func</code><span class="sig-paren">(</span><em>func</em><span class="sig-paren">)</span><a class="headerlink" href="#sugar3.dispatch.saferef.im_func" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="sugar3.dispatch.saferef.im_self">
+<code class="descclassname">sugar3.dispatch.saferef.</code><code class="descname">im_self</code><span class="sig-paren">(</span><em>func</em><span class="sig-paren">)</span><a class="headerlink" href="#sugar3.dispatch.saferef.im_self" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="sugar3.dispatch.saferef.safeRef">
+<code class="descclassname">sugar3.dispatch.saferef.</code><code class="descname">safeRef</code><span class="sig-paren">(</span><em>target</em>, <em>onDelete=None</em><span class="sig-paren">)</span><a class="headerlink" href="#sugar3.dispatch.saferef.safeRef" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return a <em>safe</em> weak reference to a callable target</p>
+<dl class="docutils">
+<dt>target – the object to be weakly referenced, if it’s a</dt>
+<dd>bound method reference, will create a BoundMethodWeakref,
+otherwise creates a simple weakref.</dd>
+<dt>onDelete – if provided, will have a hard reference stored</dt>
+<dd>to the callable to be called after the safe reference
+goes out of scope with the reference object, (either a
+weakref or a BoundMethodWeakref) as argument.</dd>
+</dl>
+</dd></dl>
+
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper"><div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+  <li><a href="sugar3.html">sugar3 package</a><ul>
+  <li><a href="sugar3.dispatch.html">sugar3.dispatch package</a><ul>
+      <li>Previous: <a href="sugar3.dispatch.dispatcher.html" title="previous chapter">sugar3.dispatch.dispatcher module</a></li>
+      <li>Next: <a href="sugar3.graphics.html" title="next chapter">sugar3.graphics package</a></li>
+  </ul></li>
+  </ul></li>
+  </ul></li>
+</ul>
+</div>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/sugar3.dispatch.saferef.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2017, Sugar Labs.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.6.7</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.8</a>
+      
+      |
+      <a href="_sources/sugar3.dispatch.saferef.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

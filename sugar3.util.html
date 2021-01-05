@@ -1,0 +1,219 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>sugar3.util module &#8212; Sugar Toolkit GTK3 0.118 documentation</title>
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '0.118',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="sugar3.speech module" href="sugar3.speech.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head>
+  <body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="module-sugar3.util">
+<span id="sugar3-util-module"></span><h1>sugar3.util module<a class="headerlink" href="#module-sugar3.util" title="Permalink to this headline">¶</a></h1>
+<p>Various utility functions</p>
+<dl class="class">
+<dt id="sugar3.util.LRU">
+<em class="property">class </em><code class="descclassname">sugar3.util.</code><code class="descname">LRU</code><span class="sig-paren">(</span><em>count</em>, <em>pairs=[]</em><span class="sig-paren">)</span><a class="headerlink" href="#sugar3.util.LRU" title="Permalink to this definition">¶</a></dt>
+<dd><p>Implementation of a length-limited O(1) LRU queue.
+Built for and used by PyPE:
+<a class="reference external" href="http://pype.sourceforge.net">http://pype.sourceforge.net</a>
+Copyright 2003 Josiah Carlson.</p>
+<dl class="method">
+<dt id="sugar3.util.LRU.iteritems">
+<code class="descname">iteritems</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sugar3.util.LRU.iteritems" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="sugar3.util.LRU.iterkeys">
+<code class="descname">iterkeys</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sugar3.util.LRU.iterkeys" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="sugar3.util.LRU.itervalues">
+<code class="descname">itervalues</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sugar3.util.LRU.itervalues" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="sugar3.util.LRU.keys">
+<code class="descname">keys</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sugar3.util.LRU.keys" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="sugar3.util.Node">
+<em class="property">class </em><code class="descclassname">sugar3.util.</code><code class="descname">Node</code><span class="sig-paren">(</span><em>prev</em>, <em>me</em><span class="sig-paren">)</span><a class="headerlink" href="#sugar3.util.Node" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">object</span></code></p>
+<dl class="attribute">
+<dt id="sugar3.util.Node.me">
+<code class="descname">me</code><a class="headerlink" href="#sugar3.util.Node.me" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="sugar3.util.Node.next">
+<code class="descname">next</code><a class="headerlink" href="#sugar3.util.Node.next" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="sugar3.util.Node.prev">
+<code class="descname">prev</code><a class="headerlink" href="#sugar3.util.Node.prev" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="sugar3.util.TempFilePath">
+<em class="property">class </em><code class="descclassname">sugar3.util.</code><code class="descname">TempFilePath</code><a class="headerlink" href="#sugar3.util.TempFilePath" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">str</span></code></p>
+</dd></dl>
+
+<dl class="function">
+<dt id="sugar3.util.format_size">
+<code class="descclassname">sugar3.util.</code><code class="descname">format_size</code><span class="sig-paren">(</span><em>size</em><span class="sig-paren">)</span><a class="headerlink" href="#sugar3.util.format_size" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="sugar3.util.is_hex">
+<code class="descclassname">sugar3.util.</code><code class="descname">is_hex</code><span class="sig-paren">(</span><em>s</em><span class="sig-paren">)</span><a class="headerlink" href="#sugar3.util.is_hex" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="sugar3.util.printable_hash">
+<code class="descclassname">sugar3.util.</code><code class="descname">printable_hash</code><span class="sig-paren">(</span><em>in_hash</em><span class="sig-paren">)</span><a class="headerlink" href="#sugar3.util.printable_hash" title="Permalink to this definition">¶</a></dt>
+<dd><p>Convert binary hash data into printable characters.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="sugar3.util.set_proc_title">
+<code class="descclassname">sugar3.util.</code><code class="descname">set_proc_title</code><span class="sig-paren">(</span><em>title</em><span class="sig-paren">)</span><a class="headerlink" href="#sugar3.util.set_proc_title" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets the process title so ps and top show more
+descriptive names.  This does not modify argv[0]
+and only the first 15 characters will be shown.</p>
+<dl class="docutils">
+<dt>title – the title you wish to change the process</dt>
+<dd>title to</dd>
+</dl>
+<p>Returns True on success.  We don’t raise exceptions
+because if something goes wrong here it is not a big
+deal as this is intended as a nice thing to have for
+debugging</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="sugar3.util.sha_data">
+<code class="descclassname">sugar3.util.</code><code class="descname">sha_data</code><span class="sig-paren">(</span><em>data</em><span class="sig-paren">)</span><a class="headerlink" href="#sugar3.util.sha_data" title="Permalink to this definition">¶</a></dt>
+<dd><p>sha1 hash some bytes.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="sugar3.util.timestamp_to_elapsed_string">
+<code class="descclassname">sugar3.util.</code><code class="descname">timestamp_to_elapsed_string</code><span class="sig-paren">(</span><em>timestamp</em>, <em>max_levels=2</em><span class="sig-paren">)</span><a class="headerlink" href="#sugar3.util.timestamp_to_elapsed_string" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="sugar3.util.unique_id">
+<code class="descclassname">sugar3.util.</code><code class="descname">unique_id</code><span class="sig-paren">(</span><em>data=''</em><span class="sig-paren">)</span><a class="headerlink" href="#sugar3.util.unique_id" title="Permalink to this definition">¶</a></dt>
+<dd><p>Generate a likely-unique ID for whatever purpose</p>
+<p>data – suffix appended to working data before hashing</p>
+<p>Returns a 40-character string with hexidecimal digits
+representing an SHA hash of the time, a random digit
+within a constrained range and the data passed.</p>
+<dl class="docutils">
+<dt>Note: these are <em>not</em> crypotographically secure or</dt>
+<dd>globally unique identifiers.  While they are likely
+to be unique-enough, no attempt is made to make
+perfectly unique values.</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="sugar3.util.validate_activity_id">
+<code class="descclassname">sugar3.util.</code><code class="descname">validate_activity_id</code><span class="sig-paren">(</span><em>actid</em><span class="sig-paren">)</span><a class="headerlink" href="#sugar3.util.validate_activity_id" title="Permalink to this definition">¶</a></dt>
+<dd><p>Validate an activity ID.</p>
+</dd></dl>
+
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper"><div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+  <li><a href="sugar3.html">sugar3 package</a><ul>
+      <li>Previous: <a href="sugar3.speech.html" title="previous chapter">sugar3.speech module</a></li>
+  </ul></li>
+  </ul></li>
+</ul>
+</div>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/sugar3.util.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2017, Sugar Labs.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.6.7</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.8</a>
+      
+      |
+      <a href="_sources/sugar3.util.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

@@ -1,0 +1,170 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>sugar3.bundle.bundleversion module &#8212; Sugar Toolkit GTK3 0.118 documentation</title>
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '0.118',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="sugar3.bundle.contentbundle module" href="sugar3.bundle.contentbundle.html" />
+    <link rel="prev" title="sugar3.bundle.bundle module" href="sugar3.bundle.bundle.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head>
+  <body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="module-sugar3.bundle.bundleversion">
+<span id="sugar3-bundle-bundleversion-module"></span><h1>sugar3.bundle.bundleversion module<a class="headerlink" href="#module-sugar3.bundle.bundleversion" title="Permalink to this headline">¶</a></h1>
+<p>Validation and normalization of bundle versions.</p>
+<p>Instances of <a class="reference internal" href="#sugar3.bundle.bundleversion.NormalizedVersion" title="sugar3.bundle.bundleversion.NormalizedVersion"><code class="xref py py-class docutils literal"><span class="pre">NormalizedVersion</span></code></a> can be directly compared;</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sugar3.bundle.bundleversion</span> <span class="k">import</span> <span class="n">NormalizedVersion</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">a</span> <span class="o">=</span> <span class="n">NormalizedVersion</span><span class="p">(</span><span class="s1">&#39;157.3&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">b</span> <span class="o">=</span> <span class="n">NormalizedVersion</span><span class="p">(</span><span class="s1">&#39;201.2&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">a</span> <span class="o">&gt;</span> <span class="n">b</span>
+<span class="go">False</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">b</span> <span class="o">&gt;</span> <span class="n">a</span>
+<span class="go">True</span>
+</pre></div>
+</div>
+<p>Invalid versions will raise <a class="reference internal" href="#sugar3.bundle.bundleversion.InvalidVersionError" title="sugar3.bundle.bundleversion.InvalidVersionError"><code class="xref py py-exc docutils literal"><span class="pre">InvalidVersionError</span></code></a>.</p>
+<p>Valid versions are <cite>1</cite>, <cite>1.2</cite>, <cite>1.2.3</cite>, <cite>1.2.3-peru</cite>, and
+<cite>1.2.3~dfsg</cite>.</p>
+<dl class="docutils">
+<dt>Invalid versions are:</dt>
+<dd><ul class="first last simple">
+<li><cite>1.2peru</cite> (because the suffix must be preceded with a dash or tilde),</li>
+<li><cite>1.2.</cite> (because a version can’t end with a period), or</li>
+<li><cite>1.02.5</cite> (because a version can’t have a leading zero).</li>
+</ul>
+</dd>
+</dl>
+<p>Based on the implementation of <span class="target" id="index-0"></span><a class="pep reference external" href="https://www.python.org/dev/peps/pep-0386"><strong>PEP 386</strong></a>, but adapted to our
+numeration schema.</p>
+<dl class="attribute">
+<dt id="sugar3.bundle.bundleversion.VERSION_RE">
+<code class="descclassname">sugar3.bundle.bundleversion.</code><code class="descname">VERSION_RE</code><a class="headerlink" href="#sugar3.bundle.bundleversion.VERSION_RE" title="Permalink to this definition">¶</a></dt>
+<dd><p><em>RegexObject</em> – regular expression for versions,    deprecated, as it is insufficient by itself.</p>
+</dd></dl>
+
+<dl class="exception">
+<dt id="sugar3.bundle.bundleversion.InvalidVersionError">
+<em class="property">exception </em><code class="descclassname">sugar3.bundle.bundleversion.</code><code class="descname">InvalidVersionError</code><a class="headerlink" href="#sugar3.bundle.bundleversion.InvalidVersionError" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">exceptions.Exception</span></code></p>
+<dl class="docutils">
+<dt>A version cannot be normalized, because:</dt>
+<dd><ul class="first last simple">
+<li>the object is not a string,</li>
+<li>the string does not match the regular expression, or</li>
+<li>the string has a leading zero in a version part.</li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="class">
+<dt id="sugar3.bundle.bundleversion.NormalizedVersion">
+<em class="property">class </em><code class="descclassname">sugar3.bundle.bundleversion.</code><code class="descname">NormalizedVersion</code><span class="sig-paren">(</span><em>activity_version</em><span class="sig-paren">)</span><a class="headerlink" href="#sugar3.bundle.bundleversion.NormalizedVersion" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">object</span></code></p>
+<p>Normalize a version string.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>activity_version</strong> (<em>str</em>) – the version string</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Raises:</th><td class="field-body"><a class="reference internal" href="#sugar3.bundle.bundleversion.InvalidVersionError" title="sugar3.bundle.bundleversion.InvalidVersionError"><code class="xref py py-exc docutils literal"><span class="pre">InvalidVersionError</span></code></a></td>
+</tr>
+</tbody>
+</table>
+<dl class="attribute">
+<dt id="sugar3.bundle.bundleversion.NormalizedVersion.parts">
+<code class="descname">parts</code><a class="headerlink" href="#sugar3.bundle.bundleversion.NormalizedVersion.parts" title="Permalink to this definition">¶</a></dt>
+<dd><p><em>list</em> – the numeric parts of the version after normalization.</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper"><div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+  <li><a href="sugar3.html">sugar3 package</a><ul>
+  <li><a href="sugar3.bundle.html">sugar3.bundle package</a><ul>
+      <li>Previous: <a href="sugar3.bundle.bundle.html" title="previous chapter">sugar3.bundle.bundle module</a></li>
+      <li>Next: <a href="sugar3.bundle.contentbundle.html" title="next chapter">sugar3.bundle.contentbundle module</a></li>
+  </ul></li>
+  </ul></li>
+  </ul></li>
+</ul>
+</div>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/sugar3.bundle.bundleversion.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2017, Sugar Labs.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.6.7</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.8</a>
+      
+      |
+      <a href="_sources/sugar3.bundle.bundleversion.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

@@ -1,0 +1,198 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>sugar3.power module &#8212; Sugar Toolkit GTK3 0.118 documentation</title>
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '0.118',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="sugar3.profile module" href="sugar3.profile.html" />
+    <link rel="prev" title="sugar3.network module" href="sugar3.network.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head>
+  <body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="module-sugar3.power">
+<span id="sugar3-power-module"></span><h1>sugar3.power module<a class="headerlink" href="#module-sugar3.power" title="Permalink to this headline">¶</a></h1>
+<p>The power module provides an interface to <em>powerd</em>, a daemon that
+manages the aggressive suspend and wakeup policies for early OLPC
+laptops.</p>
+<p>The module does nothing if <em>powerd</em> is not present.  <em>powerd</em> is not
+required on laptops other than OLPC XO-1, XO-1.5, XO-1.75 and XO-4.
+Distributions of Sugar on other hardware need not include the <em>powerd</em>
+package.</p>
+<dl class="class">
+<dt id="sugar3.power.PowerManager">
+<em class="property">class </em><code class="descclassname">sugar3.power.</code><code class="descname">PowerManager</code><a class="headerlink" href="#sugar3.power.PowerManager" title="Permalink to this definition">¶</a></dt>
+<dd><p>Control of automatic idle suspend, with reference counting.</p>
+<p><code class="xref py py-class docutils literal"><span class="pre">sugar3.activity.activity.Activity</span></code> calls
+<a class="reference internal" href="#sugar3.power.PowerManager.inhibit_suspend" title="sugar3.power.PowerManager.inhibit_suspend"><code class="xref py py-meth docutils literal"><span class="pre">inhibit_suspend()</span></code></a> before speaking text, or when an
+activity collaboration begins.</p>
+<p>Activities may call <a class="reference internal" href="#sugar3.power.PowerManager.inhibit_suspend" title="sugar3.power.PowerManager.inhibit_suspend"><code class="xref py py-meth docutils literal"><span class="pre">inhibit_suspend()</span></code></a> before playing
+music, video, speaking large amounts of text, collaborating, or
+waiting for response to network operations.</p>
+<p>As an example, the Clock activity inhibits automatic idle suspend
+while it is active, so that the displayed clock-face continues to
+change.  Otherwise it would freeze.</p>
+<p><code class="xref py py-class docutils literal"><span class="pre">sugar3.activity.activity.Activity</span></code> calls
+<a class="reference internal" href="#sugar3.power.PowerManager.shutdown" title="sugar3.power.PowerManager.shutdown"><code class="xref py py-meth docutils literal"><span class="pre">shutdown()</span></code></a> as an activity terminates, in case the
+activity has failed to call <a class="reference internal" href="#sugar3.power.PowerManager.restore_suspend" title="sugar3.power.PowerManager.restore_suspend"><code class="xref py py-meth docutils literal"><span class="pre">restore_suspend()</span></code></a>.</p>
+<p>While automatic idle suspend is inhibited, <em>powerd</em> will
+continue to dim and blank the display.</p>
+<p>Both the <a class="reference internal" href="#sugar3.power.PowerManager.inhibit_suspend" title="sugar3.power.PowerManager.inhibit_suspend"><code class="xref py py-meth docutils literal"><span class="pre">inhibit_suspend()</span></code></a> and <a class="reference internal" href="#sugar3.power.PowerManager.restore_suspend" title="sugar3.power.PowerManager.restore_suspend"><code class="xref py py-meth docutils literal"><span class="pre">restore_suspend()</span></code></a>
+methods are reference counted; automatic idle suspend is not
+restored until the same number of calls to restore are made.</p>
+<p><em>powerd</em> is resilient against failure to restore automatic idle
+suspend; it verifies an inhibit request and deletes it if the
+requesting process has terminated.</p>
+<dl class="method">
+<dt id="sugar3.power.PowerManager.inhibit_suspend">
+<code class="descname">inhibit_suspend</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sugar3.power.PowerManager.inhibit_suspend" title="Permalink to this definition">¶</a></dt>
+<dd><p>Inhibit automatic idle suspend until restored.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="sugar3.power.PowerManager.is_suspend_inhibited">
+<code class="descname">is_suspend_inhibited</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sugar3.power.PowerManager.is_suspend_inhibited" title="Permalink to this definition">¶</a></dt>
+<dd><p>Check if automatic idle suspend is inhibited.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">whether automatic idle suspend is inhibited.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">inhibited (bool)</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="sugar3.power.PowerManager.restore_suspend">
+<code class="descname">restore_suspend</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sugar3.power.PowerManager.restore_suspend" title="Permalink to this definition">¶</a></dt>
+<dd><p>Possibly restore automatic idle suspend.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="sugar3.power.PowerManager.shutdown">
+<code class="descname">shutdown</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sugar3.power.PowerManager.shutdown" title="Permalink to this definition">¶</a></dt>
+<dd><p>Shutdown the power manager.</p>
+<p>Restores automatic idle suspend regardless of reference counting.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="sugar3.power.PowerManager.suspend_breaks_collaboration">
+<code class="descname">suspend_breaks_collaboration</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sugar3.power.PowerManager.suspend_breaks_collaboration" title="Permalink to this definition">¶</a></dt>
+<dd><p>Does automatic idle suspend break collaboration with this
+toolkit?  Yes.  For future use by a toolkit with more
+resilient collaboration.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">True</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="function">
+<dt id="sugar3.power.get_power_manager">
+<code class="descclassname">sugar3.power.</code><code class="descname">get_power_manager</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sugar3.power.get_power_manager" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the power manager instance.  Only one instance exists, and
+will always be returned.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">an instance of <a class="reference internal" href="#sugar3.power.PowerManager" title="sugar3.power.PowerManager"><code class="xref py py-class docutils literal"><span class="pre">sugar3.power.PowerManager</span></code></a>.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper"><div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+  <li><a href="sugar3.html">sugar3 package</a><ul>
+      <li>Previous: <a href="sugar3.network.html" title="previous chapter">sugar3.network module</a></li>
+      <li>Next: <a href="sugar3.profile.html" title="next chapter">sugar3.profile module</a></li>
+  </ul></li>
+  </ul></li>
+</ul>
+</div>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/sugar3.power.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2017, Sugar Labs.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.6.7</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.8</a>
+      
+      |
+      <a href="_sources/sugar3.power.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>
