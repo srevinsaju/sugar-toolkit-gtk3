@@ -1,5 +1,5 @@
-sugar3\.datastore\.datastore module
-===================================
+sugar3.datastore.datastore module
+=================================
 
 .. automodule:: sugar3.datastore.datastore
     :members:

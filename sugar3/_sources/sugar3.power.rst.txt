@@ -1,5 +1,5 @@
-sugar3\.power module
-====================
+sugar3.power module
+===================
 
 .. automodule:: sugar3.power
     :members:

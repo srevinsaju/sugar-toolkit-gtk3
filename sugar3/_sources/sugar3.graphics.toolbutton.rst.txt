@@ -1,5 +1,5 @@
-sugar3\.graphics\.toolbutton module
-===================================
+sugar3.graphics.toolbutton module
+=================================
 
 .. automodule:: sugar3.graphics.toolbutton
     :members:

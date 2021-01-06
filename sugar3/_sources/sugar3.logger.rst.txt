@@ -1,5 +1,5 @@
-sugar3\.logger module
-=====================
+sugar3.logger module
+====================
 
 .. automodule:: sugar3.logger
     :members:

@@ -1,5 +1,5 @@
-sugar3\.presence\.buddy module
-==============================
+sugar3.presence.buddy module
+============================
 
 .. automodule:: sugar3.presence.buddy
     :members:

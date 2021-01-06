@@ -1,5 +1,5 @@
-sugar3\.graphics package
-========================
+sugar3.graphics package
+=======================
 
 Submodules
 ----------

@@ -1,5 +1,5 @@
-sugar3\.activity package
-========================
+sugar3.activity package
+=======================
 
 Submodules
 ----------

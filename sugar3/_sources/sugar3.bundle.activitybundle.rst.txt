@@ -1,5 +1,5 @@
-sugar3\.bundle\.activitybundle module
-=====================================
+sugar3.bundle.activitybundle module
+===================================
 
 .. automodule:: sugar3.bundle.activitybundle
     :members:

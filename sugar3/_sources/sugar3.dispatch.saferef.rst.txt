@@ -1,5 +1,5 @@
-sugar3\.dispatch\.saferef module
-================================
+sugar3.dispatch.saferef module
+==============================
 
 .. automodule:: sugar3.dispatch.saferef
     :members:

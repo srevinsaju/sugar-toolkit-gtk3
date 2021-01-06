@@ -1,5 +1,5 @@
-sugar3\.graphics\.alert module
-==============================
+sugar3.graphics.alert module
+============================
 
 .. automodule:: sugar3.graphics.alert
     :members:

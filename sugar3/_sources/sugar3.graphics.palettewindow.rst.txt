@@ -1,5 +1,5 @@
-sugar3\.graphics\.palettewindow module
-======================================
+sugar3.graphics.palettewindow module
+====================================
 
 .. automodule:: sugar3.graphics.palettewindow
     :members:

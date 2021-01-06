@@ -1,5 +1,5 @@
-sugar3\.mime module
-===================
+sugar3.mime module
+==================
 
 .. automodule:: sugar3.mime
     :members:

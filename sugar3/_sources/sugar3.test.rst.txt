@@ -1,5 +1,5 @@
-sugar3\.test package
-====================
+sugar3.test package
+===================
 
 Submodules
 ----------

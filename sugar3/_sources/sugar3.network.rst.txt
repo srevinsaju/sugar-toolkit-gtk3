@@ -1,5 +1,5 @@
-sugar3\.network module
-======================
+sugar3.network module
+=====================
 
 .. automodule:: sugar3.network
     :members:

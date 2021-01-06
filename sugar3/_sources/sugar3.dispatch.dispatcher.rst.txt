@@ -1,5 +1,5 @@
-sugar3\.dispatch\.dispatcher module
-===================================
+sugar3.dispatch.dispatcher module
+=================================
 
 .. automodule:: sugar3.dispatch.dispatcher
     :members:

@@ -1,5 +1,5 @@
-sugar3\.test\.uitree module
-===========================
+sugar3.test.uitree module
+=========================
 
 .. automodule:: sugar3.test.uitree
     :members:

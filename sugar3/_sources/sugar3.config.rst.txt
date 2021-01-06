@@ -1,5 +1,5 @@
-sugar3\.config module
-=====================
+sugar3.config module
+====================
 
 .. automodule:: sugar3.config
     :members:

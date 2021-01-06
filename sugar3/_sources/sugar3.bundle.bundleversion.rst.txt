@@ -1,5 +1,5 @@
-sugar3\.bundle\.bundleversion module
-====================================
+sugar3.bundle.bundleversion module
+==================================
 
 .. automodule:: sugar3.bundle.bundleversion
     :members:

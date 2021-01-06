@@ -1,5 +1,5 @@
-sugar3\.activity\.activityfactory module
-========================================
+sugar3.activity.activityfactory module
+======================================
 
 .. automodule:: sugar3.activity.activityfactory
     :members:

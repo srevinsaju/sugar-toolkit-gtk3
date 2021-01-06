@@ -1,5 +1,5 @@
-sugar3\.util module
-===================
+sugar3.util module
+==================
 
 .. automodule:: sugar3.util
     :members:

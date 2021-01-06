@@ -1,5 +1,5 @@
-sugar3\.activity\.activityhandle module
-=======================================
+sugar3.activity.activityhandle module
+=====================================
 
 .. automodule:: sugar3.activity.activityhandle
     :members:

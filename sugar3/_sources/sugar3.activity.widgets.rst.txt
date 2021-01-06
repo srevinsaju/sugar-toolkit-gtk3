@@ -1,5 +1,5 @@
-sugar3\.activity\.widgets module
-================================
+sugar3.activity.widgets module
+==============================
 
 .. automodule:: sugar3.activity.widgets
     :members:

@@ -1,5 +1,5 @@
-sugar3\.presence\.sugartubeconn module
-======================================
+sugar3.presence.sugartubeconn module
+====================================
 
 .. automodule:: sugar3.presence.sugartubeconn
     :members:

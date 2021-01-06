@@ -1,5 +1,5 @@
-sugar3\.test\.discover module
-=============================
+sugar3.test.discover module
+===========================
 
 .. automodule:: sugar3.test.discover
     :members:

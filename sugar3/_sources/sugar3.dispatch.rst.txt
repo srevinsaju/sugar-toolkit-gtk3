@@ -1,5 +1,5 @@
-sugar3\.dispatch package
-========================
+sugar3.dispatch package
+=======================
 
 Submodules
 ----------

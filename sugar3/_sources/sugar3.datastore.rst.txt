@@ -1,5 +1,5 @@
-sugar3\.datastore package
-=========================
+sugar3.datastore package
+========================
 
 Submodules
 ----------

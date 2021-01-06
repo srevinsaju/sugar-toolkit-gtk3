@@ -1,5 +1,5 @@
-sugar3\.activity\.activityservice module
-========================================
+sugar3.activity.activityservice module
+======================================
 
 .. automodule:: sugar3.activity.activityservice
     :members:
