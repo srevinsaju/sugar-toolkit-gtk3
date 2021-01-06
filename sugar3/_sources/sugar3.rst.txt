@@ -19,6 +19,7 @@ Submodules
 
 .. toctree::
 
+   sugar3.config
    sugar3.env
    sugar3.logger
    sugar3.mime
