@@ -31,8 +31,59 @@
         <div class="bodywrapper">
           <div class="body" role="main">
             
-  <div class="section" id="sugar3-graphics-progressicon-module">
-<h1>sugar3.graphics.progressicon module<a class="headerlink" href="#sugar3-graphics-progressicon-module" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="module-sugar3.graphics.progressicon">
+<span id="sugar3-graphics-progressicon-module"></span><h1>sugar3.graphics.progressicon module<a class="headerlink" href="#module-sugar3.graphics.progressicon" title="Permalink to this headline">¶</a></h1>
+<p>A progress icon is a progress indicator in the form of an icon.</p>
+<dl class="class">
+<dt id="sugar3.graphics.progressicon.ProgressIcon">
+<em class="property">class </em><code class="descclassname">sugar3.graphics.progressicon.</code><code class="descname">ProgressIcon</code><span class="sig-paren">(</span><em>icon_name</em>, <em>pixel_size</em>, <em>stroke_color</em>, <em>fill_color</em>, <em>direction='vertical'</em><span class="sig-paren">)</span><a class="headerlink" href="#sugar3.graphics.progressicon.ProgressIcon" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">gi.repository.Gtk.DrawingArea</span></code></p>
+<p>Display the progress filling the icon.
+This class is compatible with the sugar3.graphics.icon.Icon class.
+Call update(progress) with the new progress to update the icon.
+The direction defaults to ‘vertical’, in which case the icon is
+filled from bottom to top.  If direction is set to ‘horizontal’,
+it will be filled from right to left or from left to right,
+depending on the system’s language RTL setting.
+:param pixel_size: sets the icon size</p>
+<blockquote>
+<div>[e.g. pixel_size=style.LARGE_ICON_SIZE]</div></blockquote>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>icon_name</strong> (<em>string</em>) – Name of icon
+[e.g. icon_name=’test_icon’]</li>
+<li><strong>stroke_color</strong> (<em>string</em>) – Stroke color means border color.</li>
+<li><strong>fill_color</strong> (<em>string</em>) – The main (inside) color of progressicon
+[e.g. fill_color=style.COLOR_BLUE.get_svg()</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<dl class="method">
+<dt id="sugar3.graphics.progressicon.ProgressIcon.do_get_preferred_height">
+<code class="descname">do_get_preferred_height</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sugar3.graphics.progressicon.ProgressIcon.do_get_preferred_height" title="Permalink to this definition">¶</a></dt>
+<dd><p>Calculate the minimum and natural height of the progressicon.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="sugar3.graphics.progressicon.ProgressIcon.do_get_preferred_width">
+<code class="descname">do_get_preferred_width</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sugar3.graphics.progressicon.ProgressIcon.do_get_preferred_width" title="Permalink to this definition">¶</a></dt>
+<dd><p>Calculate the minimum and natural width of the progressicon.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="sugar3.graphics.progressicon.ProgressIcon.update">
+<code class="descname">update</code><span class="sig-paren">(</span><em>progress</em><span class="sig-paren">)</span><a class="headerlink" href="#sugar3.graphics.progressicon.ProgressIcon.update" title="Permalink to this definition">¶</a></dt>
+<dd><p>Updates progressicon with progress’s value.
+Example: update(0.9)</p>
+</dd></dl>
+
+</dd></dl>
+
 </div>
 
 

@@ -31,8 +31,161 @@
         <div class="bodywrapper">
           <div class="body" role="main">
             
-  <div class="section" id="sugar3-presence-buddy-module">
-<h1>sugar3.presence.buddy module<a class="headerlink" href="#sugar3-presence-buddy-module" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="module-sugar3.presence.buddy">
+<span id="sugar3-presence-buddy-module"></span><h1>sugar3.presence.buddy module<a class="headerlink" href="#module-sugar3.presence.buddy" title="Permalink to this headline">¶</a></h1>
+<p>UI interface to a buddy in the presence service</p>
+<p>STABLE.</p>
+<dl class="class">
+<dt id="sugar3.presence.buddy.BaseBuddy">
+<em class="property">class </em><code class="descclassname">sugar3.presence.buddy.</code><code class="descname">BaseBuddy</code><a class="headerlink" href="#sugar3.presence.buddy.BaseBuddy" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">gi.overrides.GObject.Object</span></code></p>
+<p>UI interface for a Buddy in the presence service</p>
+<p>Each buddy interface tracks a set of activities and properties
+that can be queried to provide UI controls for manipulating
+the presence interface.</p>
+<dl class="docutils">
+<dt>Properties Dictionary:</dt>
+<dd>‘key’: public key,
+‘nick’: nickname ,
+‘color’: color (XXX what format),
+‘current-activity’: (XXX dbus path?),
+‘owner’: (XXX dbus path?),</dd>
+</dl>
+<dl class="attribute">
+<dt id="sugar3.presence.buddy.BaseBuddy.color">
+<code class="descname">color</code><a class="headerlink" href="#sugar3.presence.buddy.BaseBuddy.color" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="sugar3.presence.buddy.BaseBuddy.current_activity">
+<code class="descname">current_activity</code><a class="headerlink" href="#sugar3.presence.buddy.BaseBuddy.current_activity" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="sugar3.presence.buddy.BaseBuddy.do_get_property">
+<code class="descname">do_get_property</code><span class="sig-paren">(</span><em>pspec</em><span class="sig-paren">)</span><a class="headerlink" href="#sugar3.presence.buddy.BaseBuddy.do_get_property" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="sugar3.presence.buddy.BaseBuddy.do_set_property">
+<code class="descname">do_set_property</code><span class="sig-paren">(</span><em>pspec</em>, <em>value</em><span class="sig-paren">)</span><a class="headerlink" href="#sugar3.presence.buddy.BaseBuddy.do_set_property" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="sugar3.presence.buddy.BaseBuddy.get_color">
+<code class="descname">get_color</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sugar3.presence.buddy.BaseBuddy.get_color" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="sugar3.presence.buddy.BaseBuddy.get_current_activity">
+<code class="descname">get_current_activity</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sugar3.presence.buddy.BaseBuddy.get_current_activity" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="sugar3.presence.buddy.BaseBuddy.get_ip4_address">
+<code class="descname">get_ip4_address</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sugar3.presence.buddy.BaseBuddy.get_ip4_address" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="sugar3.presence.buddy.BaseBuddy.get_key">
+<code class="descname">get_key</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sugar3.presence.buddy.BaseBuddy.get_key" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="sugar3.presence.buddy.BaseBuddy.get_nick">
+<code class="descname">get_nick</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sugar3.presence.buddy.BaseBuddy.get_nick" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="sugar3.presence.buddy.BaseBuddy.get_owner">
+<code class="descname">get_owner</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sugar3.presence.buddy.BaseBuddy.get_owner" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="sugar3.presence.buddy.BaseBuddy.get_tags">
+<code class="descname">get_tags</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sugar3.presence.buddy.BaseBuddy.get_tags" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="sugar3.presence.buddy.BaseBuddy.ip4_address">
+<code class="descname">ip4_address</code><a class="headerlink" href="#sugar3.presence.buddy.BaseBuddy.ip4_address" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="sugar3.presence.buddy.BaseBuddy.key">
+<code class="descname">key</code><a class="headerlink" href="#sugar3.presence.buddy.BaseBuddy.key" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="sugar3.presence.buddy.BaseBuddy.nick">
+<code class="descname">nick</code><a class="headerlink" href="#sugar3.presence.buddy.BaseBuddy.nick" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="sugar3.presence.buddy.BaseBuddy.object_path">
+<code class="descname">object_path</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sugar3.presence.buddy.BaseBuddy.object_path" title="Permalink to this definition">¶</a></dt>
+<dd><p>Retrieve our dbus object path</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="sugar3.presence.buddy.BaseBuddy.owner">
+<code class="descname">owner</code><a class="headerlink" href="#sugar3.presence.buddy.BaseBuddy.owner" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="sugar3.presence.buddy.BaseBuddy.set_color">
+<code class="descname">set_color</code><span class="sig-paren">(</span><em>color</em><span class="sig-paren">)</span><a class="headerlink" href="#sugar3.presence.buddy.BaseBuddy.set_color" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="sugar3.presence.buddy.BaseBuddy.set_ip4_address">
+<code class="descname">set_ip4_address</code><span class="sig-paren">(</span><em>ip4_address</em><span class="sig-paren">)</span><a class="headerlink" href="#sugar3.presence.buddy.BaseBuddy.set_ip4_address" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="sugar3.presence.buddy.BaseBuddy.set_key">
+<code class="descname">set_key</code><span class="sig-paren">(</span><em>key</em><span class="sig-paren">)</span><a class="headerlink" href="#sugar3.presence.buddy.BaseBuddy.set_key" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="sugar3.presence.buddy.BaseBuddy.set_nick">
+<code class="descname">set_nick</code><span class="sig-paren">(</span><em>nick</em><span class="sig-paren">)</span><a class="headerlink" href="#sugar3.presence.buddy.BaseBuddy.set_nick" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="sugar3.presence.buddy.BaseBuddy.set_owner">
+<code class="descname">set_owner</code><span class="sig-paren">(</span><em>owner</em><span class="sig-paren">)</span><a class="headerlink" href="#sugar3.presence.buddy.BaseBuddy.set_owner" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="sugar3.presence.buddy.BaseBuddy.set_tags">
+<code class="descname">set_tags</code><span class="sig-paren">(</span><em>tags</em><span class="sig-paren">)</span><a class="headerlink" href="#sugar3.presence.buddy.BaseBuddy.set_tags" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="sugar3.presence.buddy.BaseBuddy.tags">
+<code class="descname">tags</code><a class="headerlink" href="#sugar3.presence.buddy.BaseBuddy.tags" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="sugar3.presence.buddy.Buddy">
+<em class="property">class </em><code class="descclassname">sugar3.presence.buddy.</code><code class="descname">Buddy</code><span class="sig-paren">(</span><em>account_path</em>, <em>contact_id</em><span class="sig-paren">)</span><a class="headerlink" href="#sugar3.presence.buddy.Buddy" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#sugar3.presence.buddy.BaseBuddy" title="sugar3.presence.buddy.BaseBuddy"><code class="xref py py-class docutils literal notranslate"><span class="pre">sugar3.presence.buddy.BaseBuddy</span></code></a></p>
+<dl class="method">
+<dt id="sugar3.presence.buddy.Buddy.do_get_property">
+<code class="descname">do_get_property</code><span class="sig-paren">(</span><em>pspec</em><span class="sig-paren">)</span><a class="headerlink" href="#sugar3.presence.buddy.Buddy.do_get_property" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="sugar3.presence.buddy.Owner">
+<em class="property">class </em><code class="descclassname">sugar3.presence.buddy.</code><code class="descname">Owner</code><a class="headerlink" href="#sugar3.presence.buddy.Owner" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#sugar3.presence.buddy.BaseBuddy" title="sugar3.presence.buddy.BaseBuddy"><code class="xref py py-class docutils literal notranslate"><span class="pre">sugar3.presence.buddy.BaseBuddy</span></code></a></p>
+</dd></dl>
+
 </div>
 
 

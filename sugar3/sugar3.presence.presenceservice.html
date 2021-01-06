@@ -31,8 +31,117 @@
         <div class="bodywrapper">
           <div class="body" role="main">
             
-  <div class="section" id="sugar3-presence-presenceservice-module">
-<h1>sugar3.presence.presenceservice module<a class="headerlink" href="#sugar3-presence-presenceservice-module" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="module-sugar3.presence.presenceservice">
+<span id="sugar3-presence-presenceservice-module"></span><h1>sugar3.presence.presenceservice module<a class="headerlink" href="#module-sugar3.presence.presenceservice" title="Permalink to this headline">¶</a></h1>
+<p>STABLE.</p>
+<dl class="class">
+<dt id="sugar3.presence.presenceservice.PresenceService">
+<em class="property">class </em><code class="descclassname">sugar3.presence.presenceservice.</code><code class="descname">PresenceService</code><a class="headerlink" href="#sugar3.presence.presenceservice.PresenceService" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">gi.overrides.GObject.Object</span></code></p>
+<p>Provides simplified access to the Telepathy framework to activities</p>
+<dl class="method">
+<dt id="sugar3.presence.presenceservice.PresenceService.get">
+<code class="descname">get</code><span class="sig-paren">(</span><em>object_path</em><span class="sig-paren">)</span><a class="headerlink" href="#sugar3.presence.presenceservice.PresenceService.get" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="sugar3.presence.presenceservice.PresenceService.get_activities">
+<code class="descname">get_activities</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sugar3.presence.presenceservice.PresenceService.get_activities" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="sugar3.presence.presenceservice.PresenceService.get_activities_async">
+<code class="descname">get_activities_async</code><span class="sig-paren">(</span><em>reply_handler=None</em>, <em>error_handler=None</em><span class="sig-paren">)</span><a class="headerlink" href="#sugar3.presence.presenceservice.PresenceService.get_activities_async" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="sugar3.presence.presenceservice.PresenceService.get_activity">
+<code class="descname">get_activity</code><span class="sig-paren">(</span><em>activity_id</em>, <em>warn_if_none=True</em><span class="sig-paren">)</span><a class="headerlink" href="#sugar3.presence.presenceservice.PresenceService.get_activity" title="Permalink to this definition">¶</a></dt>
+<dd><p>Retrieve single Activity object for the given unique id</p>
+<p>activity_id – unique ID for the activity</p>
+<dl class="docutils">
+<dt>returns single Activity object or None if the activity</dt>
+<dd>is not found using GetActivityById on the service</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="sugar3.presence.presenceservice.PresenceService.get_activity_by_handle">
+<code class="descname">get_activity_by_handle</code><span class="sig-paren">(</span><em>connection_path</em>, <em>room_handle</em><span class="sig-paren">)</span><a class="headerlink" href="#sugar3.presence.presenceservice.PresenceService.get_activity_by_handle" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="sugar3.presence.presenceservice.PresenceService.get_buddies">
+<code class="descname">get_buddies</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sugar3.presence.presenceservice.PresenceService.get_buddies" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="sugar3.presence.presenceservice.PresenceService.get_buddies_async">
+<code class="descname">get_buddies_async</code><span class="sig-paren">(</span><em>reply_handler=None</em>, <em>error_handler=None</em><span class="sig-paren">)</span><a class="headerlink" href="#sugar3.presence.presenceservice.PresenceService.get_buddies_async" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="sugar3.presence.presenceservice.PresenceService.get_buddy">
+<code class="descname">get_buddy</code><span class="sig-paren">(</span><em>account_path</em>, <em>contact_id</em><span class="sig-paren">)</span><a class="headerlink" href="#sugar3.presence.presenceservice.PresenceService.get_buddy" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="sugar3.presence.presenceservice.PresenceService.get_buddy_by_telepathy_handle">
+<code class="descname">get_buddy_by_telepathy_handle</code><span class="sig-paren">(</span><em>tp_conn_name</em>, <em>tp_conn_path</em>, <em>handle</em><span class="sig-paren">)</span><a class="headerlink" href="#sugar3.presence.presenceservice.PresenceService.get_buddy_by_telepathy_handle" title="Permalink to this definition">¶</a></dt>
+<dd><p>Retrieve single Buddy object for the given public key</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><cite>tp_conn_name</cite> <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
+<dd><p class="first last">The well-known bus name of a Telepathy connection</p>
+</dd>
+<dt><cite>tp_conn_path</cite> <span class="classifier-delimiter">:</span> <span class="classifier">dbus.ObjectPath</span></dt>
+<dd><p class="first last">The object path of the Telepathy connection</p>
+</dd>
+<dt><cite>handle</cite> <span class="classifier-delimiter">:</span> <span class="classifier">int or long</span></dt>
+<dd><p class="first last">The handle of a Telepathy contact on that connection,
+of type HANDLE_TYPE_CONTACT. This may not be a
+channel-specific handle.</p>
+</dd>
+</dl>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">the Buddy object, or None if the buddy is not found</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="sugar3.presence.presenceservice.PresenceService.get_owner">
+<code class="descname">get_owner</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sugar3.presence.presenceservice.PresenceService.get_owner" title="Permalink to this definition">¶</a></dt>
+<dd><p>Retrieves the laptop Buddy object.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="sugar3.presence.presenceservice.PresenceService.get_preferred_connection">
+<code class="descname">get_preferred_connection</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sugar3.presence.presenceservice.PresenceService.get_preferred_connection" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gets the preferred telepathy connection object that an activity
+should use when talking directly to telepathy</p>
+<p>returns the bus name and the object path of the Telepathy connection</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="sugar3.presence.presenceservice.PresenceService.share_activity">
+<code class="descname">share_activity</code><span class="sig-paren">(</span><em>activity</em>, <em>properties=None</em>, <em>private=True</em><span class="sig-paren">)</span><a class="headerlink" href="#sugar3.presence.presenceservice.PresenceService.share_activity" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="function">
+<dt id="sugar3.presence.presenceservice.get_instance">
+<code class="descclassname">sugar3.presence.presenceservice.</code><code class="descname">get_instance</code><span class="sig-paren">(</span><em>allow_offline_iface=False</em><span class="sig-paren">)</span><a class="headerlink" href="#sugar3.presence.presenceservice.get_instance" title="Permalink to this definition">¶</a></dt>
+<dd><p>Retrieve this process’ view of the PresenceService</p>
+</dd></dl>
+
 </div>
 
 

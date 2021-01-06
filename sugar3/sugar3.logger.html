@@ -31,8 +31,59 @@
         <div class="bodywrapper">
           <div class="body" role="main">
             
-  <div class="section" id="sugar3-logger-module">
-<h1>sugar3.logger module<a class="headerlink" href="#sugar3-logger-module" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="module-sugar3.logger">
+<span id="sugar3-logger-module"></span><h1>sugar3.logger module<a class="headerlink" href="#module-sugar3.logger" title="Permalink to this headline">¶</a></h1>
+<p>Logging service setup.</p>
+<p>STABLE.</p>
+<dl class="class">
+<dt id="sugar3.logger.TraceRepr">
+<em class="property">class </em><code class="descclassname">sugar3.logger.</code><code class="descname">TraceRepr</code><a class="headerlink" href="#sugar3.logger.TraceRepr" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">reprlib.Repr</span></code></p>
+<dl class="method">
+<dt id="sugar3.logger.TraceRepr.repr1">
+<code class="descname">repr1</code><span class="sig-paren">(</span><em>x</em>, <em>level</em><span class="sig-paren">)</span><a class="headerlink" href="#sugar3.logger.TraceRepr.repr1" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="sugar3.logger.TraceRepr.repr_bool">
+<code class="descname">repr_bool</code><span class="sig-paren">(</span><em>x</em>, <em>level</em><span class="sig-paren">)</span><a class="headerlink" href="#sugar3.logger.TraceRepr.repr_bool" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="sugar3.logger.TraceRepr.repr_int">
+<code class="descname">repr_int</code><span class="sig-paren">(</span><em>x</em>, <em>level</em><span class="sig-paren">)</span><a class="headerlink" href="#sugar3.logger.TraceRepr.repr_int" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="function">
+<dt id="sugar3.logger.cleanup">
+<code class="descclassname">sugar3.logger.</code><code class="descname">cleanup</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sugar3.logger.cleanup" title="Permalink to this definition">¶</a></dt>
+<dd><p>Clean up the log directory, moving old logs into a numbered backup
+directory.  We only keep <cite>_MAX_BACKUP_DIRS</cite> of these backup directories
+around; the rest are removed.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="sugar3.logger.get_logs_dir">
+<code class="descclassname">sugar3.logger.</code><code class="descname">get_logs_dir</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sugar3.logger.get_logs_dir" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="sugar3.logger.set_level">
+<code class="descclassname">sugar3.logger.</code><code class="descname">set_level</code><span class="sig-paren">(</span><em>level</em><span class="sig-paren">)</span><a class="headerlink" href="#sugar3.logger.set_level" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="sugar3.logger.start">
+<code class="descclassname">sugar3.logger.</code><code class="descname">start</code><span class="sig-paren">(</span><em>log_filename=None</em><span class="sig-paren">)</span><a class="headerlink" href="#sugar3.logger.start" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="sugar3.logger.trace">
+<code class="descclassname">sugar3.logger.</code><code class="descname">trace</code><span class="sig-paren">(</span><em>logger=None</em>, <em>logger_name=None</em>, <em>skip_args=None</em>, <em>skip_kwargs=None</em>, <em>maxsize_list=30</em>, <em>maxsize_dict=30</em>, <em>maxsize_string=300</em><span class="sig-paren">)</span><a class="headerlink" href="#sugar3.logger.trace" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
 </div>
 
 
