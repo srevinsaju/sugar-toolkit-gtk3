@@ -31,8 +31,137 @@
         <div class="bodywrapper">
           <div class="body" role="main">
             
-  <div class="section" id="sugar3-graphics-objectchooser-module">
-<h1>sugar3.graphics.objectchooser module<a class="headerlink" href="#sugar3-graphics-objectchooser-module" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="module-sugar3.graphics.objectchooser">
+<span id="sugar3-graphics-objectchooser-module"></span><h1>sugar3.graphics.objectchooser module<a class="headerlink" href="#module-sugar3.graphics.objectchooser" title="Permalink to this headline">¶</a></h1>
+<p>STABLE.</p>
+<dl class="class">
+<dt id="sugar3.graphics.objectchooser.ObjectChooser">
+<em class="property">class </em><code class="descclassname">sugar3.graphics.objectchooser.</code><code class="descname">ObjectChooser</code><span class="sig-paren">(</span><em>parent=None</em>, <em>what_filter=None</em>, <em>filter_type=None</em>, <em>show_preview=False</em><span class="sig-paren">)</span><a class="headerlink" href="#sugar3.graphics.objectchooser.ObjectChooser" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>UI interface for object choosers.</p>
+<p>Object choosers can be used by acivities to allow the
+user to select objects from the file system or from
+some other similar source.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name" colspan="2">Keyword Arguments:</th></tr>
+<tr class="field-odd field"><td>&#160;</td><td class="field-body"><ul class="first last simple">
+<li><strong>parent</strong> (<a class="reference external" href="http://lazka.github.io/pgi-docs/Gtk-3.0/classes/Widget.html#Gtk.Widget" title="(in Gtk 3.0 v3.0)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Gtk.Widget</span></code></a>) – the widget calling ObjectChooser</li>
+<li><strong>what_filter</strong> (<em>str</em>) – an activity bundle_id or a generic mime type as
+defined in <a class="reference internal" href="sugar3.mime.html#module-sugar3.mime" title="sugar3.mime"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sugar3.mime</span></code></a> used to determine which objects
+will be presented in the object chooser</li>
+<li><strong>filter_type</strong> (<em>str</em>) – <p>should be one of [None, FILTER_TYPE_GENERIC_MIME,
+FILTER_TYPE_ACTIVITY, FILTER_TYPE_MIME_BY_ACTIVITY]</p>
+<p>If filter_type is None, the default behavior of the
+what_filter is applied (for backward compatibility),
+this option is DEPRECATED.</p>
+<p>If filter_type is FILTER_TYPE_GENERIC_MIME, the
+what_filter should be a generic mime type defined in
+mime.py; the object chooser will filter based in the
+‘mime_type’ metadata field.</p>
+<p>If filter_type is FILTER_TYPE_ACTIVITY, the what_filter
+should by an activity bundle_id; the object chooser
+will filter based in the ‘activity’ metadata field.</p>
+<p>If filter_type is FILTER_TYPE_MIME_BY_ACTIVITY, the
+what_filter should be an activity bundle_id; the object
+chooser will filter based on the ‘mime_type’ metadata
+field and the mime types defined by the activity in the
+activity.info file.</p>
+</li>
+<li><strong>show_preview</strong> (<em>bool</em>) – if True will show the preview image asociated with
+the object in the Journal. This option is only available if
+filter_type is selected.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Examples</p>
+<p>chooser = ObjectChooser(self._activity, what_filter=’Image’)</p>
+<dl class="docutils">
+<dt>chooser = ObjectChooser(parent=self,</dt>
+<dd>what_filter=self.get_bundle_id(),
+filter_type=FILTER_TYPE_ACTIVITY)</dd>
+</dl>
+<dl class="method">
+<dt id="sugar3.graphics.objectchooser.ObjectChooser.destroy">
+<code class="descname">destroy</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sugar3.graphics.objectchooser.ObjectChooser.destroy" title="Permalink to this definition">¶</a></dt>
+<dd><p>Destroys and cleans up (disposes) the object chooser.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="sugar3.graphics.objectchooser.ObjectChooser.get_selected_object">
+<code class="descname">get_selected_object</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sugar3.graphics.objectchooser.ObjectChooser.get_selected_object" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gets the object selected using the object chooser.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">object, the object selected</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="sugar3.graphics.objectchooser.ObjectChooser.run">
+<code class="descname">run</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sugar3.graphics.objectchooser.ObjectChooser.run" title="Permalink to this definition">¶</a></dt>
+<dd><p>Runs the object chooser and displays it.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">Gtk.ResponseType constant, the response received
+from displaying the object chooser.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="function">
+<dt id="sugar3.graphics.objectchooser.get_preview_pixbuf">
+<code class="descclassname">sugar3.graphics.objectchooser.</code><code class="descname">get_preview_pixbuf</code><span class="sig-paren">(</span><em>preview_data</em>, <em>width=-1</em>, <em>height=-1</em><span class="sig-paren">)</span><a class="headerlink" href="#sugar3.graphics.objectchooser.get_preview_pixbuf" title="Permalink to this definition">¶</a></dt>
+<dd><p>Retrive a pixbuf with the content of the preview field</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>metadata</strong> (<em>dictionary</em>) – preview data from the metadata dictionary. Can’t
+be None. Returned from the
+sugar3.datastore.datastore.DSObject.get_metadata() method.</p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name" colspan="2">Keyword Arguments:</th></tr>
+<tr class="field-even field"><td>&#160;</td><td class="field-body"><ul class="first simple">
+<li><strong>width</strong> (<em>int</em>) – the pixbuf width, if is not set,</li>
+<li><strong>default width will be used</strong> (<em>the</em>) – </li>
+<li><strong>height</strong> (<em>int</em>) – the pixbuf width, if is not set,</li>
+<li><strong>default height will be used</strong> (<em>the</em>) – </li>
+</ul>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">Pixbuf, the generated Pixbuf
+None, if it could not be created</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Example</p>
+<p>pixbuf = get_preview_pixbuf(metadata.get(‘preview’, ‘’))
+has_preview = pixbuf is not None</p>
+<dl class="docutils">
+<dt>if has_preview:</dt>
+<dd>im = Gtk.Image()
+im.set_from_pixbuf(pixbuf)
+box.add(im)
+im.show()</dd>
+</dl>
+</dd></dl>
+
 </div>
 
 

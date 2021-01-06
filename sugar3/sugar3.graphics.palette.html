@@ -31,8 +31,164 @@
         <div class="bodywrapper">
           <div class="body" role="main">
             
-  <div class="section" id="sugar3-graphics-palette-module">
-<h1>sugar3.graphics.palette module<a class="headerlink" href="#sugar3-graphics-palette-module" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="module-sugar3.graphics.palette">
+<span id="sugar3-graphics-palette-module"></span><h1>sugar3.graphics.palette module<a class="headerlink" href="#module-sugar3.graphics.palette" title="Permalink to this headline">¶</a></h1>
+<p>STABLE.</p>
+<dl class="class">
+<dt id="sugar3.graphics.palette.Palette">
+<em class="property">class </em><code class="descclassname">sugar3.graphics.palette.</code><code class="descname">Palette</code><span class="sig-paren">(</span><em>label=None</em>, <em>accel_path=None</em>, <em>text_maxlen=60</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#sugar3.graphics.palette.Palette" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="sugar3.graphics.palettewindow.html#sugar3.graphics.palettewindow.PaletteWindow" title="sugar3.graphics.palettewindow.PaletteWindow"><code class="xref py py-class docutils literal notranslate"><span class="pre">sugar3.graphics.palettewindow.PaletteWindow</span></code></a></p>
+<p>Floating palette implementation.</p>
+<p>This class dynamically switches between one of two encapsulated child
+widget types: a _PaletteWindowWidget or a _PaletteMenuWidget.</p>
+<p>The window widget, created by default, acts as the container for any
+type of widget the user may wish to add. It can optionally display primary
+text, secondary text, and an icon at the top of the palette.</p>
+<p>If the user attempts to access the ‘menu’ property, the window widget is
+destroyed and the palette is dynamically switched to use a menu widget.
+This is a GtkMenu that retains the same look and feel as a normal palette,
+allowing submenus and so on. If primary text, secondary text and/or icons
+were provided, an initial menu entry is created containing widgets to
+display such information.</p>
+<dl class="method">
+<dt id="sugar3.graphics.palette.Palette.do_get_property">
+<code class="descname">do_get_property</code><span class="sig-paren">(</span><em>pspec</em><span class="sig-paren">)</span><a class="headerlink" href="#sugar3.graphics.palette.Palette.do_get_property" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="sugar3.graphics.palette.Palette.do_set_property">
+<code class="descname">do_set_property</code><span class="sig-paren">(</span><em>pspec</em>, <em>value</em><span class="sig-paren">)</span><a class="headerlink" href="#sugar3.graphics.palette.Palette.do_set_property" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="sugar3.graphics.palette.Palette.get_full_size_request">
+<code class="descname">get_full_size_request</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sugar3.graphics.palette.Palette.get_full_size_request" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="sugar3.graphics.palette.Palette.get_icon">
+<code class="descname">get_icon</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sugar3.graphics.palette.Palette.get_icon" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="sugar3.graphics.palette.Palette.get_icon_visible">
+<code class="descname">get_icon_visible</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sugar3.graphics.palette.Palette.get_icon_visible" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="sugar3.graphics.palette.Palette.get_label_width">
+<code class="descname">get_label_width</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sugar3.graphics.palette.Palette.get_label_width" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="sugar3.graphics.palette.Palette.get_menu">
+<code class="descname">get_menu</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sugar3.graphics.palette.Palette.get_menu" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="sugar3.graphics.palette.Palette.get_primary_text">
+<code class="descname">get_primary_text</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sugar3.graphics.palette.Palette.get_primary_text" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="sugar3.graphics.palette.Palette.get_secondary_text">
+<code class="descname">get_secondary_text</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sugar3.graphics.palette.Palette.get_secondary_text" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="sugar3.graphics.palette.Palette.icon">
+<code class="descname">icon</code><a class="headerlink" href="#sugar3.graphics.palette.Palette.icon" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="sugar3.graphics.palette.Palette.icon_visible">
+<code class="descname">icon_visible</code><a class="headerlink" href="#sugar3.graphics.palette.Palette.icon_visible" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="sugar3.graphics.palette.Palette.menu">
+<code class="descname">menu</code><a class="headerlink" href="#sugar3.graphics.palette.Palette.menu" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="sugar3.graphics.palette.Palette.on_enter">
+<code class="descname">on_enter</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sugar3.graphics.palette.Palette.on_enter" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="sugar3.graphics.palette.Palette.popdown">
+<code class="descname">popdown</code><span class="sig-paren">(</span><em>immediate=False</em>, <em>state=None</em><span class="sig-paren">)</span><a class="headerlink" href="#sugar3.graphics.palette.Palette.popdown" title="Permalink to this definition">¶</a></dt>
+<dd><p>Popdown (or show the full contents of) the palette.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name" colspan="2">Keyword Arguments:</th></tr>
+<tr class="field-odd field"><td>&#160;</td><td class="field-body"><strong>immediate</strong> (<em>bool</em>) – if True, the palette will be shown instantly (as
+if the user right clicked the item).  If False, the palette
+will be shown after the usual activation wait time.</td>
+</tr>
+</tbody>
+</table>
+<div class="deprecated">
+<p><span class="versionmodified">Deprecated since version 0.109: </span>The state keyword argument is deprecated.  The old
+secondary state has become the only state.</p>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="sugar3.graphics.palette.Palette.popup">
+<code class="descname">popup</code><span class="sig-paren">(</span><em>immediate=False</em><span class="sig-paren">)</span><a class="headerlink" href="#sugar3.graphics.palette.Palette.popup" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="sugar3.graphics.palette.Palette.primary_text">
+<code class="descname">primary_text</code><a class="headerlink" href="#sugar3.graphics.palette.Palette.primary_text" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="sugar3.graphics.palette.Palette.secondary_text">
+<code class="descname">secondary_text</code><a class="headerlink" href="#sugar3.graphics.palette.Palette.secondary_text" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="sugar3.graphics.palette.Palette.set_content">
+<code class="descname">set_content</code><span class="sig-paren">(</span><em>widget</em><span class="sig-paren">)</span><a class="headerlink" href="#sugar3.graphics.palette.Palette.set_content" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="sugar3.graphics.palette.Palette.set_icon">
+<code class="descname">set_icon</code><span class="sig-paren">(</span><em>icon</em><span class="sig-paren">)</span><a class="headerlink" href="#sugar3.graphics.palette.Palette.set_icon" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="sugar3.graphics.palette.Palette.set_icon_visible">
+<code class="descname">set_icon_visible</code><span class="sig-paren">(</span><em>visible</em><span class="sig-paren">)</span><a class="headerlink" href="#sugar3.graphics.palette.Palette.set_icon_visible" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="sugar3.graphics.palette.Palette.set_primary_text">
+<code class="descname">set_primary_text</code><span class="sig-paren">(</span><em>label</em>, <em>accel_path=None</em><span class="sig-paren">)</span><a class="headerlink" href="#sugar3.graphics.palette.Palette.set_primary_text" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="sugar3.graphics.palette.Palette.set_secondary_text">
+<code class="descname">set_secondary_text</code><span class="sig-paren">(</span><em>label</em><span class="sig-paren">)</span><a class="headerlink" href="#sugar3.graphics.palette.Palette.set_secondary_text" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="sugar3.graphics.palette.PaletteActionBar">
+<em class="property">class </em><code class="descclassname">sugar3.graphics.palette.</code><code class="descname">PaletteActionBar</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#sugar3.graphics.palette.PaletteActionBar" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">gi.repository.Gtk.HButtonBox</span></code></p>
+<dl class="method">
+<dt id="sugar3.graphics.palette.PaletteActionBar.add_action">
+<code class="descname">add_action</code><span class="sig-paren">(</span><em>label</em>, <em>icon_name=None</em><span class="sig-paren">)</span><a class="headerlink" href="#sugar3.graphics.palette.PaletteActionBar.add_action" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
 </div>
 
 

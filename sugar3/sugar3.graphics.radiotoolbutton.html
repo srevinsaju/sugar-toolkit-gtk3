@@ -31,8 +31,294 @@
         <div class="bodywrapper">
           <div class="body" role="main">
             
-  <div class="section" id="sugar3-graphics-radiotoolbutton-module">
-<h1>sugar3.graphics.radiotoolbutton module<a class="headerlink" href="#sugar3-graphics-radiotoolbutton-module" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="module-sugar3.graphics.radiotoolbutton">
+<span id="sugar3-graphics-radiotoolbutton-module"></span><h1>sugar3.graphics.radiotoolbutton module<a class="headerlink" href="#module-sugar3.graphics.radiotoolbutton" title="Permalink to this headline">¶</a></h1>
+<p>Provides a RadioToolButton class, similar to a “push” button.
+A group of RadioToolButtons can be set, so that only one can be
+selected at a time. When a button is clicked, it depresses and
+is shaded darker.</p>
+<p>It is also possible to set a tooltip to be dispalyed when the
+user scrolls over it with their cursor as well as an accelerator
+keyboard shortcut.</p>
+<p class="rubric">Example</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">gi.repository</span> <span class="k">import</span> <span class="n">Gtk</span>
+<span class="kn">from</span> <span class="nn">sugar3.graphics.radiotoolbutton</span> <span class="k">import</span> <span class="n">RadioToolButton</span>
+<span class="kn">from</span> <span class="nn">sugar3.graphics.radiopalette</span> <span class="k">import</span> <span class="n">RadioPalette</span><span class="p">,</span> <span class="n">RadioMenuButton</span>
+<span class="kn">from</span> <span class="nn">sugar3.graphics.xocolor</span> <span class="k">import</span> <span class="n">XoColor</span>
+
+
+<span class="kn">from</span> <span class="nn">common</span> <span class="k">import</span> <span class="n">set_theme</span>
+<span class="n">set_theme</span><span class="p">()</span>
+
+<span class="n">window</span> <span class="o">=</span> <span class="n">Gtk</span><span class="o">.</span><span class="n">Window</span><span class="p">()</span>
+<span class="n">window</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+<span class="n">window</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s2">&quot;delete-event&quot;</span><span class="p">,</span> <span class="n">Gtk</span><span class="o">.</span><span class="n">main_quit</span><span class="p">)</span>
+
+<span class="n">box</span> <span class="o">=</span> <span class="n">Gtk</span><span class="o">.</span><span class="n">Box</span><span class="p">(</span><span class="n">orientation</span><span class="o">=</span><span class="n">Gtk</span><span class="o">.</span><span class="n">Orientation</span><span class="o">.</span><span class="n">HORIZONTAL</span><span class="p">)</span>
+<span class="n">window</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">box</span><span class="p">)</span>
+<span class="n">box</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+
+
+<span class="k">def</span> <span class="nf">echo</span><span class="p">(</span><span class="n">button</span><span class="p">,</span> <span class="n">label</span><span class="p">):</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">button</span><span class="o">.</span><span class="n">props</span><span class="o">.</span><span class="n">active</span><span class="p">:</span>
+        <span class="k">return</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">label</span><span class="p">)</span>
+
+
+<span class="n">palette</span> <span class="o">=</span> <span class="n">RadioPalette</span><span class="p">()</span>
+<span class="c1"># Adding 3 RadioToolButtons to a palette</span>
+
+<span class="n">button1</span> <span class="o">=</span> <span class="n">RadioToolButton</span><span class="p">(</span><span class="n">icon_name</span><span class="o">=</span><span class="s1">&#39;document-save&#39;</span><span class="p">,</span> <span class="n">accelerator</span><span class="o">=</span><span class="s2">&quot;&lt;ctrl&gt;S&quot;</span><span class="p">,</span>
+                          <span class="n">xo_color</span><span class="o">=</span><span class="n">XoColor</span><span class="p">(</span><span class="s2">&quot;white&quot;</span><span class="p">))</span>
+<span class="n">button1</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s1">&#39;toggled&#39;</span><span class="p">,</span> <span class="k">lambda</span> <span class="n">button</span><span class="p">:</span> <span class="n">echo</span><span class="p">(</span><span class="n">button</span><span class="p">,</span> <span class="s1">&#39;document-save&#39;</span><span class="p">))</span>
+<span class="n">palette</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">button1</span><span class="p">,</span> <span class="s1">&#39;menu.document-save&#39;</span><span class="p">)</span>
+
+<span class="n">button2</span> <span class="o">=</span> <span class="n">RadioToolButton</span><span class="p">(</span><span class="n">icon_name</span><span class="o">=</span><span class="s1">&#39;document-open&#39;</span><span class="p">,</span> <span class="n">accelerator</span><span class="o">=</span><span class="s2">&quot;&lt;ctrl&gt;O&quot;</span><span class="p">,</span>
+                          <span class="n">xo_color</span><span class="o">=</span><span class="n">XoColor</span><span class="p">(</span><span class="s2">&quot;white&quot;</span><span class="p">),</span> <span class="n">group</span><span class="o">=</span><span class="n">button1</span><span class="p">)</span>
+<span class="n">button2</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s1">&#39;toggled&#39;</span><span class="p">,</span> <span class="k">lambda</span> <span class="n">button</span><span class="p">:</span> <span class="n">echo</span><span class="p">(</span><span class="n">button</span><span class="p">,</span> <span class="s1">&#39;document-open&#39;</span><span class="p">))</span>
+<span class="n">palette</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">button2</span><span class="p">,</span> <span class="s1">&#39;menu.document-open&#39;</span><span class="p">)</span>
+
+<span class="n">button3</span> <span class="o">=</span> <span class="n">RadioToolButton</span><span class="p">(</span><span class="n">icon_name</span><span class="o">=</span><span class="s1">&#39;document-send&#39;</span><span class="p">,</span> <span class="n">accelerator</span><span class="o">=</span><span class="s2">&quot;&lt;ctrl&gt;F&quot;</span><span class="p">,</span>
+                          <span class="n">xo_color</span><span class="o">=</span><span class="n">XoColor</span><span class="p">(</span><span class="s2">&quot;white&quot;</span><span class="p">),</span> <span class="n">group</span><span class="o">=</span><span class="n">button1</span><span class="p">)</span>
+<span class="n">button3</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s1">&#39;toggled&#39;</span><span class="p">,</span> <span class="k">lambda</span> <span class="n">button</span><span class="p">:</span> <span class="n">echo</span><span class="p">(</span><span class="n">button</span><span class="p">,</span> <span class="s1">&#39;document-send&#39;</span><span class="p">))</span>
+<span class="n">palette</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">button3</span><span class="p">,</span> <span class="s1">&#39;menu.document-send&#39;</span><span class="p">)</span>
+
+<span class="n">button</span> <span class="o">=</span> <span class="n">RadioMenuButton</span><span class="p">(</span><span class="n">palette</span><span class="o">=</span><span class="n">palette</span><span class="p">)</span>
+<span class="n">box</span><span class="o">.</span><span class="n">pack_start</span><span class="p">(</span><span class="n">button</span><span class="p">,</span> <span class="kc">False</span><span class="p">,</span> <span class="kc">False</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="n">button</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+    <span class="n">Gtk</span><span class="o">.</span><span class="n">main</span><span class="p">()</span>
+</pre></div>
+</div>
+<dl class="class">
+<dt id="sugar3.graphics.radiotoolbutton.RadioToolButton">
+<em class="property">class </em><code class="descclassname">sugar3.graphics.radiotoolbutton.</code><code class="descname">RadioToolButton</code><span class="sig-paren">(</span><em>icon_name=None</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#sugar3.graphics.radiotoolbutton.RadioToolButton" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">gi.repository.Gtk.RadioToolButton</span></code></p>
+<p>The RadioToolButton class manages a Gtk.RadioToolButton styled for
+Sugar.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>icon_name</strong> (<em>string</em>) – name of icon to be used.</p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name" colspan="2">Keyword Arguments:</th></tr>
+<tr class="field-even field"><td>&#160;</td><td class="field-body"><ul class="first last simple">
+<li><strong>accelerator</strong> (<em>string</em>) – keyboard shortcut to be used to
+activate this button.</li>
+<li><strong>tooltip</strong> (<em>string</em>) – tooltip to be displayed when user hovers
+over button.</li>
+<li><strong>xo_color</strong> (<a class="reference internal" href="sugar3.graphics.xocolor.html#sugar3.graphics.xocolor.XoColor" title="sugar3.graphics.xocolor.XoColor"><em>sugar3.graphics.xocolor.XoColor</em></a>) – XoColor of button.</li>
+<li><strong>hide_tooltip_on_click</strong> (<em>bool</em>) – Whether or not the tooltip
+is hidden when user clicks on button.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<dl class="attribute">
+<dt id="sugar3.graphics.radiotoolbutton.RadioToolButton.accelerator">
+<code class="descname">accelerator</code><a class="headerlink" href="#sugar3.graphics.radiotoolbutton.RadioToolButton.accelerator" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return accelerator string.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="sugar3.graphics.radiotoolbutton.RadioToolButton.create_palette">
+<code class="descname">create_palette</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sugar3.graphics.radiotoolbutton.RadioToolButton.create_palette" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="sugar3.graphics.radiotoolbutton.RadioToolButton.do_clicked">
+<code class="descname">do_clicked</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sugar3.graphics.radiotoolbutton.RadioToolButton.do_clicked" title="Permalink to this definition">¶</a></dt>
+<dd><p>Implementation method for hiding the tooltip when
+the button is clicked.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="sugar3.graphics.radiotoolbutton.RadioToolButton.do_draw">
+<code class="descname">do_draw</code><span class="sig-paren">(</span><em>cr</em><span class="sig-paren">)</span><a class="headerlink" href="#sugar3.graphics.radiotoolbutton.RadioToolButton.do_draw" title="Permalink to this definition">¶</a></dt>
+<dd><p>Implementation method for drawing the button.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="sugar3.graphics.radiotoolbutton.RadioToolButton.do_get_property">
+<code class="descname">do_get_property</code><span class="sig-paren">(</span><em>pspec</em><span class="sig-paren">)</span><a class="headerlink" href="#sugar3.graphics.radiotoolbutton.RadioToolButton.do_get_property" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="sugar3.graphics.radiotoolbutton.RadioToolButton.do_set_property">
+<code class="descname">do_set_property</code><span class="sig-paren">(</span><em>pspec</em>, <em>value</em><span class="sig-paren">)</span><a class="headerlink" href="#sugar3.graphics.radiotoolbutton.RadioToolButton.do_set_property" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="sugar3.graphics.radiotoolbutton.RadioToolButton.get_accelerator">
+<code class="descname">get_accelerator</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sugar3.graphics.radiotoolbutton.RadioToolButton.get_accelerator" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return accelerator string.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="sugar3.graphics.radiotoolbutton.RadioToolButton.get_hide_tooltip_on_click">
+<code class="descname">get_hide_tooltip_on_click</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sugar3.graphics.radiotoolbutton.RadioToolButton.get_hide_tooltip_on_click" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return True if the tooltip is hidden when a user
+clicks on the button, otherwise return False.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="sugar3.graphics.radiotoolbutton.RadioToolButton.get_icon_name">
+<code class="descname">get_icon_name</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sugar3.graphics.radiotoolbutton.RadioToolButton.get_icon_name" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return icon name, or None if there is no icon name.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="sugar3.graphics.radiotoolbutton.RadioToolButton.get_palette">
+<code class="descname">get_palette</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sugar3.graphics.radiotoolbutton.RadioToolButton.get_palette" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="sugar3.graphics.radiotoolbutton.RadioToolButton.get_palette_invoker">
+<code class="descname">get_palette_invoker</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sugar3.graphics.radiotoolbutton.RadioToolButton.get_palette_invoker" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="sugar3.graphics.radiotoolbutton.RadioToolButton.get_tooltip">
+<code class="descname">get_tooltip</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sugar3.graphics.radiotoolbutton.RadioToolButton.get_tooltip" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the tooltip.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="sugar3.graphics.radiotoolbutton.RadioToolButton.get_xo_color">
+<code class="descname">get_xo_color</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sugar3.graphics.radiotoolbutton.RadioToolButton.get_xo_color" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return xocolor.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="sugar3.graphics.radiotoolbutton.RadioToolButton.hide_tooltip_on_click">
+<code class="descname">hide_tooltip_on_click</code><a class="headerlink" href="#sugar3.graphics.radiotoolbutton.RadioToolButton.hide_tooltip_on_click" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return True if the tooltip is hidden when a user
+clicks on the button, otherwise return False.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="sugar3.graphics.radiotoolbutton.RadioToolButton.icon_name">
+<code class="descname">icon_name</code><a class="headerlink" href="#sugar3.graphics.radiotoolbutton.RadioToolButton.icon_name" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return icon name, or None if there is no icon name.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="sugar3.graphics.radiotoolbutton.RadioToolButton.palette">
+<code class="descname">palette</code><a class="headerlink" href="#sugar3.graphics.radiotoolbutton.RadioToolButton.palette" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="sugar3.graphics.radiotoolbutton.RadioToolButton.palette_invoker">
+<code class="descname">palette_invoker</code><a class="headerlink" href="#sugar3.graphics.radiotoolbutton.RadioToolButton.palette_invoker" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="sugar3.graphics.radiotoolbutton.RadioToolButton.set_accelerator">
+<code class="descname">set_accelerator</code><span class="sig-paren">(</span><em>accelerator</em><span class="sig-paren">)</span><a class="headerlink" href="#sugar3.graphics.radiotoolbutton.RadioToolButton.set_accelerator" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set keyboard shortcut that activates this button.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>accelerator</strong> (<em>string</em>) – accelerator to be set. Should be in</li>
+<li><strong>&lt;modifier&gt;Letter.</strong> (<em>form</em>) – </li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="sugar3.graphics.radiotoolbutton.RadioToolButton.set_hide_tooltip_on_click">
+<code class="descname">set_hide_tooltip_on_click</code><span class="sig-paren">(</span><em>hide_tooltip_on_click</em><span class="sig-paren">)</span><a class="headerlink" href="#sugar3.graphics.radiotoolbutton.RadioToolButton.set_hide_tooltip_on_click" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set whether or not the tooltip is hidden when a user
+clicks on the button.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>hide_tooltip_on_click</strong> (<em>bool</em>) – True if the tooltip is</li>
+<li><strong>on click</strong><strong>, </strong><strong>and False otherwise.</strong> (<em>hidden</em>) – </li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="sugar3.graphics.radiotoolbutton.RadioToolButton.set_icon_name">
+<code class="descname">set_icon_name</code><span class="sig-paren">(</span><em>icon_name</em><span class="sig-paren">)</span><a class="headerlink" href="#sugar3.graphics.radiotoolbutton.RadioToolButton.set_icon_name" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set name of icon.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>icon_name</strong> (<em>string</em>) – name of icon</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="sugar3.graphics.radiotoolbutton.RadioToolButton.set_palette">
+<code class="descname">set_palette</code><span class="sig-paren">(</span><em>palette</em><span class="sig-paren">)</span><a class="headerlink" href="#sugar3.graphics.radiotoolbutton.RadioToolButton.set_palette" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="sugar3.graphics.radiotoolbutton.RadioToolButton.set_palette_invoker">
+<code class="descname">set_palette_invoker</code><span class="sig-paren">(</span><em>palette_invoker</em><span class="sig-paren">)</span><a class="headerlink" href="#sugar3.graphics.radiotoolbutton.RadioToolButton.set_palette_invoker" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="sugar3.graphics.radiotoolbutton.RadioToolButton.set_tooltip">
+<code class="descname">set_tooltip</code><span class="sig-paren">(</span><em>tooltip</em><span class="sig-paren">)</span><a class="headerlink" href="#sugar3.graphics.radiotoolbutton.RadioToolButton.set_tooltip" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set the tooltip.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>tooltip</strong> (<em>string</em>) – tooltip to be set.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="sugar3.graphics.radiotoolbutton.RadioToolButton.set_xo_color">
+<code class="descname">set_xo_color</code><span class="sig-paren">(</span><em>xo_color</em><span class="sig-paren">)</span><a class="headerlink" href="#sugar3.graphics.radiotoolbutton.RadioToolButton.set_xo_color" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set XoColor of button icon.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>xo_color</strong> (<a class="reference internal" href="sugar3.graphics.xocolor.html#sugar3.graphics.xocolor.XoColor" title="sugar3.graphics.xocolor.XoColor"><em>sugar3.graphics.xocolor.XoColor</em></a>) – xocolor to be set.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="sugar3.graphics.radiotoolbutton.RadioToolButton.tooltip">
+<code class="descname">tooltip</code><a class="headerlink" href="#sugar3.graphics.radiotoolbutton.RadioToolButton.tooltip" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the tooltip.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="sugar3.graphics.radiotoolbutton.RadioToolButton.xo_color">
+<code class="descname">xo_color</code><a class="headerlink" href="#sugar3.graphics.radiotoolbutton.RadioToolButton.xo_color" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return xocolor.</p>
+</dd></dl>
+
+</dd></dl>
+
 </div>
 
 
