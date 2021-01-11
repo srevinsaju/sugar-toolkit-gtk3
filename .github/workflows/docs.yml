@@ -14,7 +14,7 @@ jobs:
       - name: Install dependencies
         run: |
           # assume yes and do not ask for confirmation when installing deps using pacman
-          yes | pacman -Syu base-devel sudo git wget curl python-sphinx --noconfirm
+          yes | pacman -Syu base-devel sudo git wget curl python-sphinx rsync --noconfirm
 
       - uses: actions/checkout@v2
         with:
