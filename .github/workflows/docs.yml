@@ -29,6 +29,7 @@ jobs:
 
       - name: Build documentation
         run: |
+          sudo chown builduser:builduser . -R
           sudo -u builduser ./ci/docs.sh
 
       - name: Deploy 🚀
