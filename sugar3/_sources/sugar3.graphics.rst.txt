@@ -5,6 +5,7 @@ Submodules
 ----------
 
 .. toctree::
+   :maxdepth: 4
 
    sugar3.graphics.alert
    sugar3.graphics.animator
@@ -38,6 +39,6 @@ Module contents
 ---------------
 
 .. automodule:: sugar3.graphics
-    :members:
-    :undoc-members:
-    :show-inheritance:
+   :members:
+   :undoc-members:
+   :show-inheritance:

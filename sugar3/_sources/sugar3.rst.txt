@@ -5,19 +5,21 @@ Subpackages
 -----------
 
 .. toctree::
+   :maxdepth: 4
 
-    sugar3.activity
-    sugar3.bundle
-    sugar3.datastore
-    sugar3.dispatch
-    sugar3.graphics
-    sugar3.presence
-    sugar3.test
+   sugar3.activity
+   sugar3.bundle
+   sugar3.datastore
+   sugar3.dispatch
+   sugar3.graphics
+   sugar3.presence
+   sugar3.test
 
 Submodules
 ----------
 
 .. toctree::
+   :maxdepth: 4
 
    sugar3.config
    sugar3.env
@@ -33,6 +35,6 @@ Module contents
 ---------------
 
 .. automodule:: sugar3
-    :members:
-    :undoc-members:
-    :show-inheritance:
+   :members:
+   :undoc-members:
+   :show-inheritance:

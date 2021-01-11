@@ -1,25 +1,24 @@
 
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html>
   <head>
-    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>sugar3.datastore.datastore module &#8212; Sugar Toolkit GTK3 0.118 documentation</title>
-    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
-    <script type="text/javascript" src="_static/jquery.js"></script>
-    <script type="text/javascript" src="_static/underscore.js"></script>
-    <script type="text/javascript" src="_static/doctools.js"></script>
-    <script type="text/javascript" src="_static/language_data.js"></script>
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="sugar3.dispatch package" href="sugar3.dispatch.html" />
     <link rel="prev" title="sugar3.datastore package" href="sugar3.datastore.html" />
    
   <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
   
   <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
 
@@ -29,147 +28,149 @@
     <div class="document">
       <div class="documentwrapper">
         <div class="bodywrapper">
+          
+
           <div class="body" role="main">
             
   <div class="section" id="module-sugar3.datastore.datastore">
 <span id="sugar3-datastore-datastore-module"></span><h1>sugar3.datastore.datastore module<a class="headerlink" href="#module-sugar3.datastore.datastore" title="Permalink to this headline">¶</a></h1>
 <p>STABLE</p>
-<dl class="class">
+<dl class="py class">
 <dt id="sugar3.datastore.datastore.DSMetadata">
-<em class="property">class </em><code class="descclassname">sugar3.datastore.datastore.</code><code class="descname">DSMetadata</code><span class="sig-paren">(</span><em>properties=None</em><span class="sig-paren">)</span><a class="headerlink" href="#sugar3.datastore.datastore.DSMetadata" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-prename descclassname">sugar3.datastore.datastore.</code><code class="sig-name descname">DSMetadata</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">properties</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#sugar3.datastore.datastore.DSMetadata" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">gi.overrides.GObject.Object</span></code></p>
 <p>A representation of the metadata associated with a DS entry.</p>
-<dl class="method">
+<dl class="py method">
 <dt id="sugar3.datastore.datastore.DSMetadata.copy">
-<code class="descname">copy</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sugar3.datastore.datastore.DSMetadata.copy" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">copy</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sugar3.datastore.datastore.DSMetadata.copy" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="sugar3.datastore.datastore.DSMetadata.get">
-<code class="descname">get</code><span class="sig-paren">(</span><em>key</em>, <em>default=None</em><span class="sig-paren">)</span><a class="headerlink" href="#sugar3.datastore.datastore.DSMetadata.get" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">get</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">key</span></em>, <em class="sig-param"><span class="n">default</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#sugar3.datastore.datastore.DSMetadata.get" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="sugar3.datastore.datastore.DSMetadata.get_dictionary">
-<code class="descname">get_dictionary</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sugar3.datastore.datastore.DSMetadata.get_dictionary" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">get_dictionary</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sugar3.datastore.datastore.DSMetadata.get_dictionary" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="sugar3.datastore.datastore.DSMetadata.has_key">
-<code class="descname">has_key</code><span class="sig-paren">(</span><em>key</em><span class="sig-paren">)</span><a class="headerlink" href="#sugar3.datastore.datastore.DSMetadata.has_key" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">has_key</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">key</span></em><span class="sig-paren">)</span><a class="headerlink" href="#sugar3.datastore.datastore.DSMetadata.has_key" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="sugar3.datastore.datastore.DSMetadata.keys">
-<code class="descname">keys</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sugar3.datastore.datastore.DSMetadata.keys" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">keys</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sugar3.datastore.datastore.DSMetadata.keys" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="sugar3.datastore.datastore.DSMetadata.update">
-<code class="descname">update</code><span class="sig-paren">(</span><em>properties</em><span class="sig-paren">)</span><a class="headerlink" href="#sugar3.datastore.datastore.DSMetadata.update" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">update</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">properties</span></em><span class="sig-paren">)</span><a class="headerlink" href="#sugar3.datastore.datastore.DSMetadata.update" title="Permalink to this definition">¶</a></dt>
 <dd><p>Update all of the metadata</p>
 </dd></dl>
 
 </dd></dl>
 
-<dl class="class">
+<dl class="py class">
 <dt id="sugar3.datastore.datastore.DSObject">
-<em class="property">class </em><code class="descclassname">sugar3.datastore.datastore.</code><code class="descname">DSObject</code><span class="sig-paren">(</span><em>object_id</em>, <em>metadata=None</em>, <em>file_path=None</em><span class="sig-paren">)</span><a class="headerlink" href="#sugar3.datastore.datastore.DSObject" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-prename descclassname">sugar3.datastore.datastore.</code><code class="sig-name descname">DSObject</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">object_id</span></em>, <em class="sig-param"><span class="n">metadata</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">file_path</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#sugar3.datastore.datastore.DSObject" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
 <p>A representation of a DS entry.</p>
-<dl class="method">
+<dl class="py method">
 <dt id="sugar3.datastore.datastore.DSObject.copy">
-<code class="descname">copy</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sugar3.datastore.datastore.DSObject.copy" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">copy</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sugar3.datastore.datastore.DSObject.copy" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="sugar3.datastore.datastore.DSObject.destroy">
-<code class="descname">destroy</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sugar3.datastore.datastore.DSObject.destroy" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">destroy</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sugar3.datastore.datastore.DSObject.destroy" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="attribute">
+<dl class="py method">
 <dt id="sugar3.datastore.datastore.DSObject.file_path">
-<code class="descname">file_path</code><a class="headerlink" href="#sugar3.datastore.datastore.DSObject.file_path" title="Permalink to this definition">¶</a></dt>
+<em class="property">property </em><code class="sig-name descname">file_path</code><a class="headerlink" href="#sugar3.datastore.datastore.DSObject.file_path" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="sugar3.datastore.datastore.DSObject.get_file_path">
-<code class="descname">get_file_path</code><span class="sig-paren">(</span><em>fetch=True</em><span class="sig-paren">)</span><a class="headerlink" href="#sugar3.datastore.datastore.DSObject.get_file_path" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">get_file_path</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">fetch</span><span class="o">=</span><span class="default_value">True</span></em><span class="sig-paren">)</span><a class="headerlink" href="#sugar3.datastore.datastore.DSObject.get_file_path" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="sugar3.datastore.datastore.DSObject.get_metadata">
-<code class="descname">get_metadata</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sugar3.datastore.datastore.DSObject.get_metadata" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">get_metadata</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sugar3.datastore.datastore.DSObject.get_metadata" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="sugar3.datastore.datastore.DSObject.get_object_id">
-<code class="descname">get_object_id</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sugar3.datastore.datastore.DSObject.get_object_id" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">get_object_id</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sugar3.datastore.datastore.DSObject.get_object_id" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="attribute">
+<dl class="py method">
 <dt id="sugar3.datastore.datastore.DSObject.metadata">
-<code class="descname">metadata</code><a class="headerlink" href="#sugar3.datastore.datastore.DSObject.metadata" title="Permalink to this definition">¶</a></dt>
+<em class="property">property </em><code class="sig-name descname">metadata</code><a class="headerlink" href="#sugar3.datastore.datastore.DSObject.metadata" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="attribute">
+<dl class="py method">
 <dt id="sugar3.datastore.datastore.DSObject.object_id">
-<code class="descname">object_id</code><a class="headerlink" href="#sugar3.datastore.datastore.DSObject.object_id" title="Permalink to this definition">¶</a></dt>
+<em class="property">property </em><code class="sig-name descname">object_id</code><a class="headerlink" href="#sugar3.datastore.datastore.DSObject.object_id" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="sugar3.datastore.datastore.DSObject.set_file_path">
-<code class="descname">set_file_path</code><span class="sig-paren">(</span><em>file_path</em><span class="sig-paren">)</span><a class="headerlink" href="#sugar3.datastore.datastore.DSObject.set_file_path" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">set_file_path</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">file_path</span></em><span class="sig-paren">)</span><a class="headerlink" href="#sugar3.datastore.datastore.DSObject.set_file_path" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="sugar3.datastore.datastore.DSObject.set_metadata">
-<code class="descname">set_metadata</code><span class="sig-paren">(</span><em>metadata</em><span class="sig-paren">)</span><a class="headerlink" href="#sugar3.datastore.datastore.DSObject.set_metadata" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">set_metadata</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">metadata</span></em><span class="sig-paren">)</span><a class="headerlink" href="#sugar3.datastore.datastore.DSObject.set_metadata" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="sugar3.datastore.datastore.DSObject.set_object_id">
-<code class="descname">set_object_id</code><span class="sig-paren">(</span><em>object_id</em><span class="sig-paren">)</span><a class="headerlink" href="#sugar3.datastore.datastore.DSObject.set_object_id" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">set_object_id</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">object_id</span></em><span class="sig-paren">)</span><a class="headerlink" href="#sugar3.datastore.datastore.DSObject.set_object_id" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
 
-<dl class="class">
+<dl class="py class">
 <dt id="sugar3.datastore.datastore.RawObject">
-<em class="property">class </em><code class="descclassname">sugar3.datastore.datastore.</code><code class="descname">RawObject</code><span class="sig-paren">(</span><em>file_path</em><span class="sig-paren">)</span><a class="headerlink" href="#sugar3.datastore.datastore.RawObject" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-prename descclassname">sugar3.datastore.datastore.</code><code class="sig-name descname">RawObject</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">file_path</span></em><span class="sig-paren">)</span><a class="headerlink" href="#sugar3.datastore.datastore.RawObject" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
 <p>A representation for objects not in the DS but
 in the file system.</p>
-<dl class="method">
+<dl class="py method">
 <dt id="sugar3.datastore.datastore.RawObject.destroy">
-<code class="descname">destroy</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sugar3.datastore.datastore.RawObject.destroy" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">destroy</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sugar3.datastore.datastore.RawObject.destroy" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="attribute">
+<dl class="py method">
 <dt id="sugar3.datastore.datastore.RawObject.file_path">
-<code class="descname">file_path</code><a class="headerlink" href="#sugar3.datastore.datastore.RawObject.file_path" title="Permalink to this definition">¶</a></dt>
+<em class="property">property </em><code class="sig-name descname">file_path</code><a class="headerlink" href="#sugar3.datastore.datastore.RawObject.file_path" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="sugar3.datastore.datastore.RawObject.get_file_path">
-<code class="descname">get_file_path</code><span class="sig-paren">(</span><em>fetch=True</em><span class="sig-paren">)</span><a class="headerlink" href="#sugar3.datastore.datastore.RawObject.get_file_path" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">get_file_path</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">fetch</span><span class="o">=</span><span class="default_value">True</span></em><span class="sig-paren">)</span><a class="headerlink" href="#sugar3.datastore.datastore.RawObject.get_file_path" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="sugar3.datastore.datastore.RawObject.get_metadata">
-<code class="descname">get_metadata</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sugar3.datastore.datastore.RawObject.get_metadata" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">get_metadata</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sugar3.datastore.datastore.RawObject.get_metadata" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="attribute">
+<dl class="py method">
 <dt id="sugar3.datastore.datastore.RawObject.metadata">
-<code class="descname">metadata</code><a class="headerlink" href="#sugar3.datastore.datastore.RawObject.metadata" title="Permalink to this definition">¶</a></dt>
+<em class="property">property </em><code class="sig-name descname">metadata</code><a class="headerlink" href="#sugar3.datastore.datastore.RawObject.metadata" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
 
-<dl class="function">
+<dl class="py function">
 <dt id="sugar3.datastore.datastore.copy">
-<code class="descclassname">sugar3.datastore.datastore.</code><code class="descname">copy</code><span class="sig-paren">(</span><em>ds_object</em>, <em>mount_point</em><span class="sig-paren">)</span><a class="headerlink" href="#sugar3.datastore.datastore.copy" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">sugar3.datastore.datastore.</code><code class="sig-name descname">copy</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">ds_object</span></em>, <em class="sig-param"><span class="n">mount_point</span></em><span class="sig-paren">)</span><a class="headerlink" href="#sugar3.datastore.datastore.copy" title="Permalink to this definition">¶</a></dt>
 <dd><p>Copy a datastore entry</p>
 <p>Keyword arguments:
 ds_object – DSObject to copy
@@ -178,29 +179,29 @@ mount_point – mount point of the new datastore entry</p>
 new_ds_object – DSObject copied</p>
 </dd></dl>
 
-<dl class="function">
+<dl class="py function">
 <dt id="sugar3.datastore.datastore.create">
-<code class="descclassname">sugar3.datastore.datastore.</code><code class="descname">create</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sugar3.datastore.datastore.create" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">sugar3.datastore.datastore.</code><code class="sig-name descname">create</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sugar3.datastore.datastore.create" title="Permalink to this definition">¶</a></dt>
 <dd><p>Create a new DSObject.</p>
 <p>Return: a DSObject</p>
 </dd></dl>
 
-<dl class="function">
+<dl class="py function">
 <dt id="sugar3.datastore.datastore.delete">
-<code class="descclassname">sugar3.datastore.datastore.</code><code class="descname">delete</code><span class="sig-paren">(</span><em>object_id</em><span class="sig-paren">)</span><a class="headerlink" href="#sugar3.datastore.datastore.delete" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">sugar3.datastore.datastore.</code><code class="sig-name descname">delete</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">object_id</span></em><span class="sig-paren">)</span><a class="headerlink" href="#sugar3.datastore.datastore.delete" title="Permalink to this definition">¶</a></dt>
 <dd><p>Delete the datastore entry with the given uid.</p>
 <p>Keyword arguments:
 object_id – uid of the datastore entry</p>
 </dd></dl>
 
-<dl class="function">
+<dl class="py function">
 <dt id="sugar3.datastore.datastore.find">
-<code class="descclassname">sugar3.datastore.datastore.</code><code class="descname">find</code><span class="sig-paren">(</span><em>query</em>, <em>sorting=None</em>, <em>limit=None</em>, <em>offset=None</em>, <em>properties=None</em>, <em>reply_handler=None</em>, <em>error_handler=None</em><span class="sig-paren">)</span><a class="headerlink" href="#sugar3.datastore.datastore.find" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">sugar3.datastore.datastore.</code><code class="sig-name descname">find</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">query</span></em>, <em class="sig-param"><span class="n">sorting</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">limit</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">offset</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">properties</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">reply_handler</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">error_handler</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#sugar3.datastore.datastore.find" title="Permalink to this definition">¶</a></dt>
 <dd><p>Find DS entries that match the query provided.</p>
 <p>Keyword arguments:
 query – a dictionary containing metadata key value pairs</p>
 <blockquote>
-<div>for a fulltext search use the key ‘query’ e.g. {‘query’: ‘blue*’}
+<div><p>for a fulltext search use the key ‘query’ e.g. {‘query’: ‘blue*’}
 other possible well-known properties are:
 ‘activity’:          ‘my.organization.MyActivity’
 ‘activity_id’:       ‘6f7f3acacca87886332f50bdd522d805f0abbf1f’
@@ -216,57 +217,60 @@ other possible well-known properties are:
 ‘share-scope’:       # if shared
 ‘buddies’:           ‘{}’
 ‘description’:       ‘some longer text’
-‘tags’:              ‘one two’</div></blockquote>
+‘tags’:              ‘one two’</p>
+</div></blockquote>
 <p>sorting – key to order results by e.g. ‘timestamp’ (default None)
 limit – return only limit results (default None)
 offset – return only results starting at offset (default None)
 properties – you can specify here a list of metadata you want to be</p>
 <blockquote>
-<div>present in the result e.g. [‘title, ‘keep’] (default None)</div></blockquote>
-<dl class="docutils">
-<dt>reply_handler – will be called with the method’s return values as</dt>
-<dd>arguments (default None)</dd>
-<dt>error_handler – will be called with an instance of a DBusException</dt>
-<dd>representing a remote exception (default None)</dd>
+<div><p>present in the result e.g. [‘title, ‘keep’] (default None)</p>
+</div></blockquote>
+<dl class="simple">
+<dt>reply_handler – will be called with the method’s return values as</dt><dd><p>arguments (default None)</p>
+</dd>
+<dt>error_handler – will be called with an instance of a DBusException</dt><dd><p>representing a remote exception (default None)</p>
+</dd>
 </dl>
 <p>Return: DSObjects matching the query, number of matches</p>
 </dd></dl>
 
-<dl class="function">
+<dl class="py function">
 <dt id="sugar3.datastore.datastore.get">
-<code class="descclassname">sugar3.datastore.datastore.</code><code class="descname">get</code><span class="sig-paren">(</span><em>object_id</em><span class="sig-paren">)</span><a class="headerlink" href="#sugar3.datastore.datastore.get" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">sugar3.datastore.datastore.</code><code class="sig-name descname">get</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">object_id</span></em><span class="sig-paren">)</span><a class="headerlink" href="#sugar3.datastore.datastore.get" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get the properties of the object with the ID given.</p>
 <p>Keyword arguments:
 object_id – unique identifier of the object</p>
 <p>Return: a DSObject</p>
 </dd></dl>
 
-<dl class="function">
+<dl class="py function">
 <dt id="sugar3.datastore.datastore.get_unique_values">
-<code class="descclassname">sugar3.datastore.datastore.</code><code class="descname">get_unique_values</code><span class="sig-paren">(</span><em>key</em><span class="sig-paren">)</span><a class="headerlink" href="#sugar3.datastore.datastore.get_unique_values" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">sugar3.datastore.datastore.</code><code class="sig-name descname">get_unique_values</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">key</span></em><span class="sig-paren">)</span><a class="headerlink" href="#sugar3.datastore.datastore.get_unique_values" title="Permalink to this definition">¶</a></dt>
 <dd><p>Retrieve an array of unique values for a field.</p>
 <p>Keyword arguments:
 key – only the property activity is currently supported</p>
 <p>Return: list of activities</p>
 </dd></dl>
 
-<dl class="function">
+<dl class="py function">
 <dt id="sugar3.datastore.datastore.write">
-<code class="descclassname">sugar3.datastore.datastore.</code><code class="descname">write</code><span class="sig-paren">(</span><em>ds_object</em>, <em>update_mtime=True</em>, <em>transfer_ownership=False</em>, <em>reply_handler=None</em>, <em>error_handler=None</em>, <em>timeout=-1</em><span class="sig-paren">)</span><a class="headerlink" href="#sugar3.datastore.datastore.write" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">sugar3.datastore.datastore.</code><code class="sig-name descname">write</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">ds_object</span></em>, <em class="sig-param"><span class="n">update_mtime</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">transfer_ownership</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">reply_handler</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">error_handler</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">timeout</span><span class="o">=</span><span class="default_value">- 1</span></em><span class="sig-paren">)</span><a class="headerlink" href="#sugar3.datastore.datastore.write" title="Permalink to this definition">¶</a></dt>
 <dd><p>Write the DSObject given to the datastore. Creates a new entry if
 the entry does not exist yet.</p>
 <p>Keyword arguments:
 update_mtime – boolean if the mtime of the entry should be regenerated</p>
 <blockquote>
-<div>(default True)</div></blockquote>
-<dl class="docutils">
-<dt>transfer_ownership – set it to true if the ownership of the entry should</dt>
-<dd>be passed - who is responsible to delete the file
-when done with it (default False)</dd>
-<dt>reply_handler – will be called with the method’s return values as</dt>
-<dd>arguments (default None)</dd>
-<dt>error_handler – will be called with an instance of a DBusException</dt>
-<dd>representing a remote exception (default None)</dd>
+<div><p>(default True)</p>
+</div></blockquote>
+<dl class="simple">
+<dt>transfer_ownership – set it to true if the ownership of the entry should</dt><dd><p>be passed - who is responsible to delete the file
+when done with it (default False)</p>
+</dd>
+<dt>reply_handler – will be called with the method’s return values as</dt><dd><p>arguments (default None)</p>
+</dd>
+<dt>error_handler – will be called with an instance of a DBusException</dt><dd><p>representing a remote exception (default None)</p>
+</dd>
 </dl>
 <p>timeout – dbus timeout for the caller to wait (default -1)</p>
 </dd></dl>
@@ -275,6 +279,7 @@ when done with it (default False)</dd>
 
 
           </div>
+          
         </div>
       </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
@@ -328,17 +333,23 @@ when done with it (default False)</dd>
 </ul>
 </div>
 <div id="searchbox" style="display: none" role="search">
-  <h3>Quick search</h3>
+  <h3 id="searchlabel">Quick search</h3>
     <div class="searchformwrapper">
     <form class="search" action="search.html" method="get">
-      <input type="text" name="q" />
+      <input type="text" name="q" aria-labelledby="searchlabel" />
       <input type="submit" value="Go" />
-      <input type="hidden" name="check_keywords" value="yes" />
-      <input type="hidden" name="area" value="default" />
     </form>
     </div>
 </div>
-<script type="text/javascript">$('#searchbox').show(0);</script>
+<script>$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
         </div>
       </div>
       <div class="clearer"></div>
@@ -347,8 +358,8 @@ when done with it (default False)</dd>
       &copy;2017, Sugar Labs.
       
       |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.8.5</a>
-      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.8</a>
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 3.4.3</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
       
       |
       <a href="_sources/sugar3.datastore.datastore.rst.txt"

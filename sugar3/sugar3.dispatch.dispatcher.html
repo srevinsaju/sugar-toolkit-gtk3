@@ -1,25 +1,24 @@
 
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html>
   <head>
-    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>sugar3.dispatch.dispatcher module &#8212; Sugar Toolkit GTK3 0.118 documentation</title>
-    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
-    <script type="text/javascript" src="_static/jquery.js"></script>
-    <script type="text/javascript" src="_static/underscore.js"></script>
-    <script type="text/javascript" src="_static/doctools.js"></script>
-    <script type="text/javascript" src="_static/language_data.js"></script>
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="sugar3.dispatch.saferef module" href="sugar3.dispatch.saferef.html" />
     <link rel="prev" title="sugar3.dispatch package" href="sugar3.dispatch.html" />
    
   <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
   
   <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
 
@@ -29,77 +28,78 @@
     <div class="document">
       <div class="documentwrapper">
         <div class="bodywrapper">
+          
+
           <div class="body" role="main">
             
   <div class="section" id="module-sugar3.dispatch.dispatcher">
 <span id="sugar3-dispatch-dispatcher-module"></span><h1>sugar3.dispatch.dispatcher module<a class="headerlink" href="#module-sugar3.dispatch.dispatcher" title="Permalink to this headline">¶</a></h1>
-<dl class="class">
+<dl class="py class">
 <dt id="sugar3.dispatch.dispatcher.Signal">
-<em class="property">class </em><code class="descclassname">sugar3.dispatch.dispatcher.</code><code class="descname">Signal</code><span class="sig-paren">(</span><em>providing_args=None</em><span class="sig-paren">)</span><a class="headerlink" href="#sugar3.dispatch.dispatcher.Signal" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-prename descclassname">sugar3.dispatch.dispatcher.</code><code class="sig-name descname">Signal</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">providing_args</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#sugar3.dispatch.dispatcher.Signal" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
 <p>Base class for all signals</p>
-<dl class="docutils">
-<dt>Internal attributes:</dt>
-<dd>receivers – { receriverkey (id) : weakref(receiver) }</dd>
+<dl class="simple">
+<dt>Internal attributes:</dt><dd><p>receivers – { receriverkey (id) : weakref(receiver) }</p>
+</dd>
 </dl>
-<dl class="method">
+<dl class="py method">
 <dt id="sugar3.dispatch.dispatcher.Signal.connect">
-<code class="descname">connect</code><span class="sig-paren">(</span><em>receiver</em>, <em>sender=None</em>, <em>weak=True</em>, <em>dispatch_uid=None</em><span class="sig-paren">)</span><a class="headerlink" href="#sugar3.dispatch.dispatcher.Signal.connect" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">connect</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">receiver</span></em>, <em class="sig-param"><span class="n">sender</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">weak</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">dispatch_uid</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#sugar3.dispatch.dispatcher.Signal.connect" title="Permalink to this definition">¶</a></dt>
 <dd><p>Connect receiver to sender for signal</p>
-<dl class="docutils">
-<dt>receiver – a function or an instance method which is to</dt>
-<dd><p class="first">receive signals.  Receivers must be
+<dl>
+<dt>receiver – a function or an instance method which is to</dt><dd><p>receive signals.  Receivers must be
 hashable objects.</p>
 <p>if weak is True, then receiver must be weak-referencable
 (more precisely saferef.safeRef() must be able to create
 a reference to the receiver).</p>
 <p>Receivers must be able to accept keyword arguments.</p>
-<dl class="last docutils">
-<dt>If receivers have a dispatch_uid attribute, the receiver will</dt>
-<dd>not be added if another receiver already exists with that
-dispatch_uid.</dd>
+<dl class="simple">
+<dt>If receivers have a dispatch_uid attribute, the receiver will</dt><dd><p>not be added if another receiver already exists with that
+dispatch_uid.</p>
+</dd>
 </dl>
 </dd>
-<dt>sender – the sender to which the receiver should respond</dt>
-<dd>Must either be of type Signal, or None to receive events
-from any sender.</dd>
-<dt>weak – whether to use weak references to the receiver</dt>
-<dd>By default, the module will attempt to use weak
+<dt>sender – the sender to which the receiver should respond</dt><dd><p>Must either be of type Signal, or None to receive events
+from any sender.</p>
+</dd>
+<dt>weak – whether to use weak references to the receiver</dt><dd><p>By default, the module will attempt to use weak
 references to the receiver objects.  If this parameter
-is false, then strong references will be used.</dd>
-<dt>dispatch_uid – an identifier used to uniquely identify a particular</dt>
-<dd>instance of a receiver. This will usually be a string, though it
-may be anything hashable.</dd>
+is false, then strong references will be used.</p>
+</dd>
+<dt>dispatch_uid – an identifier used to uniquely identify a particular</dt><dd><p>instance of a receiver. This will usually be a string, though it
+may be anything hashable.</p>
+</dd>
 </dl>
 <p>returns None</p>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="sugar3.dispatch.dispatcher.Signal.disconnect">
-<code class="descname">disconnect</code><span class="sig-paren">(</span><em>receiver=None</em>, <em>sender=None</em>, <em>weak=True</em>, <em>dispatch_uid=None</em><span class="sig-paren">)</span><a class="headerlink" href="#sugar3.dispatch.dispatcher.Signal.disconnect" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">disconnect</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">receiver</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">sender</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">weak</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">dispatch_uid</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#sugar3.dispatch.dispatcher.Signal.disconnect" title="Permalink to this definition">¶</a></dt>
 <dd><p>Disconnect receiver from sender for signal</p>
-<dl class="docutils">
-<dt>receiver – the registered receiver to disconnect. May be none if</dt>
-<dd>dispatch_uid is specified.</dd>
+<dl class="simple">
+<dt>receiver – the registered receiver to disconnect. May be none if</dt><dd><p>dispatch_uid is specified.</p>
+</dd>
 </dl>
 <p>sender – the registered sender to disconnect
 weak – the weakref state to disconnect
 dispatch_uid – the unique identifier of the receiver to disconnect</p>
 <p>disconnect reverses the process of connect.</p>
-<dl class="docutils">
-<dt>If weak references are used, disconnect need not be called.</dt>
-<dd>The receiver will be remove from dispatch automatically.</dd>
+<dl class="simple">
+<dt>If weak references are used, disconnect need not be called.</dt><dd><p>The receiver will be remove from dispatch automatically.</p>
+</dd>
 </dl>
 <p>returns None</p>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="sugar3.dispatch.dispatcher.Signal.send">
-<code class="descname">send</code><span class="sig-paren">(</span><em>sender</em>, <em>**named</em><span class="sig-paren">)</span><a class="headerlink" href="#sugar3.dispatch.dispatcher.Signal.send" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">send</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">sender</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">named</span></em><span class="sig-paren">)</span><a class="headerlink" href="#sugar3.dispatch.dispatcher.Signal.send" title="Permalink to this definition">¶</a></dt>
 <dd><p>Send signal from sender to all connected receivers.</p>
-<dl class="docutils">
-<dt>sender – the sender of the signal</dt>
-<dd>Either a specific object or None.</dd>
+<dl class="simple">
+<dt>sender – the sender of the signal</dt><dd><p>Either a specific object or None.</p>
+</dd>
 </dl>
 <p>named – named arguments which will be passed to receivers.</p>
 <p>Returns a list of tuple pairs [(receiver, response), … ].</p>
@@ -109,17 +109,17 @@ possible to not have all receivers called if a raises an
 error.</p>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="sugar3.dispatch.dispatcher.Signal.send_robust">
-<code class="descname">send_robust</code><span class="sig-paren">(</span><em>sender</em>, <em>**named</em><span class="sig-paren">)</span><a class="headerlink" href="#sugar3.dispatch.dispatcher.Signal.send_robust" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">send_robust</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">sender</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">named</span></em><span class="sig-paren">)</span><a class="headerlink" href="#sugar3.dispatch.dispatcher.Signal.send_robust" title="Permalink to this definition">¶</a></dt>
 <dd><p>Send signal from sender to all connected receivers catching errors</p>
-<dl class="docutils">
-<dt>sender – the sender of the signal</dt>
-<dd>Can be any python object (normally one registered with
-a connect if you actually want something to occur).</dd>
-<dt>named – named arguments which will be passed to receivers.</dt>
-<dd>These arguments must be a subset of the argument names
-defined in providing_args.</dd>
+<dl class="simple">
+<dt>sender – the sender of the signal</dt><dd><p>Can be any python object (normally one registered with
+a connect if you actually want something to occur).</p>
+</dd>
+<dt>named – named arguments which will be passed to receivers.</dt><dd><p>These arguments must be a subset of the argument names
+defined in providing_args.</p>
+</dd>
 </dl>
 <p>Return a list of tuple pairs [(receiver, response), … ],
 may raise DispatcherKeyError</p>
@@ -130,20 +130,21 @@ the error instance is returned as the result for that receiver.</p>
 
 </dd></dl>
 
-<dl class="function">
+<dl class="py function">
 <dt id="sugar3.dispatch.dispatcher.im_func">
-<code class="descclassname">sugar3.dispatch.dispatcher.</code><code class="descname">im_func</code><span class="sig-paren">(</span><em>func</em><span class="sig-paren">)</span><a class="headerlink" href="#sugar3.dispatch.dispatcher.im_func" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">sugar3.dispatch.dispatcher.</code><code class="sig-name descname">im_func</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">func</span></em><span class="sig-paren">)</span><a class="headerlink" href="#sugar3.dispatch.dispatcher.im_func" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="function">
+<dl class="py function">
 <dt id="sugar3.dispatch.dispatcher.im_self">
-<code class="descclassname">sugar3.dispatch.dispatcher.</code><code class="descname">im_self</code><span class="sig-paren">(</span><em>func</em><span class="sig-paren">)</span><a class="headerlink" href="#sugar3.dispatch.dispatcher.im_self" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">sugar3.dispatch.dispatcher.</code><code class="sig-name descname">im_self</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">func</span></em><span class="sig-paren">)</span><a class="headerlink" href="#sugar3.dispatch.dispatcher.im_self" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </div>
 
 
           </div>
+          
         </div>
       </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
@@ -198,17 +199,23 @@ the error instance is returned as the result for that receiver.</p>
 </ul>
 </div>
 <div id="searchbox" style="display: none" role="search">
-  <h3>Quick search</h3>
+  <h3 id="searchlabel">Quick search</h3>
     <div class="searchformwrapper">
     <form class="search" action="search.html" method="get">
-      <input type="text" name="q" />
+      <input type="text" name="q" aria-labelledby="searchlabel" />
       <input type="submit" value="Go" />
-      <input type="hidden" name="check_keywords" value="yes" />
-      <input type="hidden" name="area" value="default" />
     </form>
     </div>
 </div>
-<script type="text/javascript">$('#searchbox').show(0);</script>
+<script>$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
         </div>
       </div>
       <div class="clearer"></div>
@@ -217,8 +224,8 @@ the error instance is returned as the result for that receiver.</p>
       &copy;2017, Sugar Labs.
       
       |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.8.5</a>
-      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.8</a>
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 3.4.3</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
       
       |
       <a href="_sources/sugar3.dispatch.dispatcher.rst.txt"

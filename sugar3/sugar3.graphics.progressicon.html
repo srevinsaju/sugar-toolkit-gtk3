@@ -1,25 +1,24 @@
 
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html>
   <head>
-    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>sugar3.graphics.progressicon module &#8212; Sugar Toolkit GTK3 0.118 documentation</title>
-    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
-    <script type="text/javascript" src="_static/jquery.js"></script>
-    <script type="text/javascript" src="_static/underscore.js"></script>
-    <script type="text/javascript" src="_static/doctools.js"></script>
-    <script type="text/javascript" src="_static/language_data.js"></script>
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="sugar3.graphics.radiopalette module" href="sugar3.graphics.radiopalette.html" />
     <link rel="prev" title="sugar3.graphics.panel module" href="sugar3.graphics.panel.html" />
    
   <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
   
   <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
 
@@ -29,14 +28,16 @@
     <div class="document">
       <div class="documentwrapper">
         <div class="bodywrapper">
+          
+
           <div class="body" role="main">
             
   <div class="section" id="module-sugar3.graphics.progressicon">
 <span id="sugar3-graphics-progressicon-module"></span><h1>sugar3.graphics.progressicon module<a class="headerlink" href="#module-sugar3.graphics.progressicon" title="Permalink to this headline">¶</a></h1>
 <p>A progress icon is a progress indicator in the form of an icon.</p>
-<dl class="class">
+<dl class="py class">
 <dt id="sugar3.graphics.progressicon.ProgressIcon">
-<em class="property">class </em><code class="descclassname">sugar3.graphics.progressicon.</code><code class="descname">ProgressIcon</code><span class="sig-paren">(</span><em>icon_name</em>, <em>pixel_size</em>, <em>stroke_color</em>, <em>fill_color</em>, <em>direction='vertical'</em><span class="sig-paren">)</span><a class="headerlink" href="#sugar3.graphics.progressicon.ProgressIcon" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-prename descclassname">sugar3.graphics.progressicon.</code><code class="sig-name descname">ProgressIcon</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">icon_name</span></em>, <em class="sig-param"><span class="n">pixel_size</span></em>, <em class="sig-param"><span class="n">stroke_color</span></em>, <em class="sig-param"><span class="n">fill_color</span></em>, <em class="sig-param"><span class="n">direction</span><span class="o">=</span><span class="default_value">'vertical'</span></em><span class="sig-paren">)</span><a class="headerlink" href="#sugar3.graphics.progressicon.ProgressIcon" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">gi.repository.Gtk.DrawingArea</span></code></p>
 <p>Display the progress filling the icon.
 This class is compatible with the sugar3.graphics.icon.Icon class.
@@ -47,37 +48,34 @@ it will be filled from right to left or from left to right,
 depending on the system’s language RTL setting.
 :param pixel_size: sets the icon size</p>
 <blockquote>
-<div>[e.g. pixel_size=style.LARGE_ICON_SIZE]</div></blockquote>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>icon_name</strong> (<em>string</em>) – Name of icon
-[e.g. icon_name=’test_icon’]</li>
-<li><strong>stroke_color</strong> (<em>string</em>) – Stroke color means border color.</li>
-<li><strong>fill_color</strong> (<em>string</em>) – The main (inside) color of progressicon
-[e.g. fill_color=style.COLOR_BLUE.get_svg()</li>
+<div><p>[e.g. pixel_size=style.LARGE_ICON_SIZE]</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>icon_name</strong> (<em>string</em>) – Name of icon
+[e.g. icon_name=’test_icon’]</p></li>
+<li><p><strong>stroke_color</strong> (<em>string</em>) – Stroke color means border color.</p></li>
+<li><p><strong>fill_color</strong> (<em>string</em>) – The main (inside) color of progressicon
+[e.g. fill_color=style.COLOR_BLUE.get_svg()</p></li>
 </ul>
-</td>
-</tr>
-</tbody>
-</table>
-<dl class="method">
+</dd>
+</dl>
+<dl class="py method">
 <dt id="sugar3.graphics.progressicon.ProgressIcon.do_get_preferred_height">
-<code class="descname">do_get_preferred_height</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sugar3.graphics.progressicon.ProgressIcon.do_get_preferred_height" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">do_get_preferred_height</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sugar3.graphics.progressicon.ProgressIcon.do_get_preferred_height" title="Permalink to this definition">¶</a></dt>
 <dd><p>Calculate the minimum and natural height of the progressicon.</p>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="sugar3.graphics.progressicon.ProgressIcon.do_get_preferred_width">
-<code class="descname">do_get_preferred_width</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sugar3.graphics.progressicon.ProgressIcon.do_get_preferred_width" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">do_get_preferred_width</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sugar3.graphics.progressicon.ProgressIcon.do_get_preferred_width" title="Permalink to this definition">¶</a></dt>
 <dd><p>Calculate the minimum and natural width of the progressicon.</p>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="sugar3.graphics.progressicon.ProgressIcon.update">
-<code class="descname">update</code><span class="sig-paren">(</span><em>progress</em><span class="sig-paren">)</span><a class="headerlink" href="#sugar3.graphics.progressicon.ProgressIcon.update" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">update</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">progress</span></em><span class="sig-paren">)</span><a class="headerlink" href="#sugar3.graphics.progressicon.ProgressIcon.update" title="Permalink to this definition">¶</a></dt>
 <dd><p>Updates progressicon with progress’s value.
 Example: update(0.9)</p>
 </dd></dl>
@@ -88,6 +86,7 @@ Example: update(0.9)</p>
 
 
           </div>
+          
         </div>
       </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
@@ -167,17 +166,23 @@ Example: update(0.9)</p>
 </ul>
 </div>
 <div id="searchbox" style="display: none" role="search">
-  <h3>Quick search</h3>
+  <h3 id="searchlabel">Quick search</h3>
     <div class="searchformwrapper">
     <form class="search" action="search.html" method="get">
-      <input type="text" name="q" />
+      <input type="text" name="q" aria-labelledby="searchlabel" />
       <input type="submit" value="Go" />
-      <input type="hidden" name="check_keywords" value="yes" />
-      <input type="hidden" name="area" value="default" />
     </form>
     </div>
 </div>
-<script type="text/javascript">$('#searchbox').show(0);</script>
+<script>$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
         </div>
       </div>
       <div class="clearer"></div>
@@ -186,8 +191,8 @@ Example: update(0.9)</p>
       &copy;2017, Sugar Labs.
       
       |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.8.5</a>
-      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.8</a>
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 3.4.3</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
       
       |
       <a href="_sources/sugar3.graphics.progressicon.rst.txt"

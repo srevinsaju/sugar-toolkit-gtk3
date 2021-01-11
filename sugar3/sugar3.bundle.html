@@ -1,25 +1,24 @@
 
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html>
   <head>
-    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>sugar3.bundle package &#8212; Sugar Toolkit GTK3 0.118 documentation</title>
-    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
-    <script type="text/javascript" src="_static/jquery.js"></script>
-    <script type="text/javascript" src="_static/underscore.js"></script>
-    <script type="text/javascript" src="_static/doctools.js"></script>
-    <script type="text/javascript" src="_static/language_data.js"></script>
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="sugar3.bundle.activitybundle module" href="sugar3.bundle.activitybundle.html" />
     <link rel="prev" title="sugar3.activity.widgets module" href="sugar3.activity.widgets.html" />
    
   <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
   
   <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
 
@@ -29,6 +28,8 @@
     <div class="document">
       <div class="documentwrapper">
         <div class="bodywrapper">
+          
+
           <div class="body" role="main">
             
   <div class="section" id="sugar3-bundle-package">
@@ -52,58 +53,58 @@
 <p>Your <cite>activity/activity.info</cite> file must have these metadata keys after
 an <cite>[Activity]</cite> header on the first line:</p>
 <ul class="simple">
-<li><cite>name</cite> - the name of the activity, shown by Sugar in the list of
-installed activities, e.g. Browse,</li>
-<li><cite>activity_version</cite> - the version of the activity, e.g. 1, 1.2,
-1.2.3, 1.2.3-country, or 1.2.3~developer,</li>
-<li><cite>bundle_id</cite> - the activity bundle identifier, using [Java package
+<li><p><cite>name</cite> - the name of the activity, shown by Sugar in the list of
+installed activities, e.g. Browse,</p></li>
+<li><p><cite>activity_version</cite> - the version of the activity, e.g. 1, 1.2,
+1.2.3, 1.2.3-country, or 1.2.3~developer,</p></li>
+<li><p><cite>bundle_id</cite> - the activity bundle identifier, using [Java package
 naming conventions]
 (<a class="reference external" href="http://en.wikipedia.org/wiki/Java_package#Package_naming_conventions">http://en.wikipedia.org/wiki/Java_package#Package_naming_conventions</a>),
 should conform to the [D-Bus specification for message protocol
 names]
 (<a class="reference external" href="http://dbus.freedesktop.org/doc/dbus-specification.html#message-protocol-names">http://dbus.freedesktop.org/doc/dbus-specification.html#message-protocol-names</a>)
 (hyphens are not allowed), usually an organisation or individual domain name
-in reverse order, e.g. <cite>org.sugarlabs.Name</cite>,</li>
-<li><cite>license</cite> - an identifier for the software license of the bundle,
+in reverse order, e.g. <cite>org.sugarlabs.Name</cite>,</p></li>
+<li><p><cite>license</cite> - an identifier for the software license of the bundle,
 either a <a class="reference external" href="https://fedoraproject.org/wiki/Licensing:Main?rd=Licensing#Good_Licenses">Fedora License Short Name</a>, (e.g. GPLv3+) or an <a class="reference external" href="http://spdx.org/licenses/">SPDX
 License Identifier</a>, with an optional <cite>or later version</cite> suffix,
 e.g. <cite>GPL-3.0+</cite>, and multiple licenses are to be separated with
-semicolons,</li>
-<li><cite>icon</cite> - the icon file for the activity, shown by Sugar in the list
-of installed activities,</li>
-<li><cite>exec</cite> - how to execute the activity, e.g.
+semicolons,</p></li>
+<li><p><cite>icon</cite> - the icon file for the activity, shown by Sugar in the list
+of installed activities,</p></li>
+<li><p><cite>exec</cite> - how to execute the activity, e.g.
 <cite>sugar-activity3 module.Class</cite> (For activities written for Python 3),
-<cite>sugar-activity module.Class</cite> (For activities written for Python 2)</li>
+<cite>sugar-activity module.Class</cite> (For activities written for Python 2)</p></li>
 </ul>
 <p>Optional metadata keys are;</p>
 <ul class="simple">
-<li><cite>summary</cite> - a short summary of the activity that may be displayed in
-the List or Home Views,</li>
-<li><cite>mime_types</cite> - list of MIME types supported by the activity,
+<li><p><cite>summary</cite> - a short summary of the activity that may be displayed in
+the List or Home Views,</p></li>
+<li><p><cite>mime_types</cite> - list of MIME types supported by the activity,
 separated by semicolons.  Your <cite>read_file</cite> method must be able to read
 files of these MIME types.  Used to offer your activity when opening a
-downloaded file or a journal object.</li>
-<li><cite>url</cite> - link to a home page or user documentation on
-<a class="reference external" href="https://help.sugarlabs.org/">https://help.sugarlabs.org/</a>,</li>
-<li><cite>repository</cite> - link to repository for activity code, for use by git clone,</li>
-<li><cite>single_instance</cite> - if yes, only a single instance of an activity
+downloaded file or a journal object.</p></li>
+<li><p><cite>url</cite> - link to a home page or user documentation on
+<a class="reference external" href="https://help.sugarlabs.org/">https://help.sugarlabs.org/</a>,</p></li>
+<li><p><cite>repository</cite> - link to repository for activity code, for use by git clone,</p></li>
+<li><p><cite>single_instance</cite> - if yes, only a single instance of an activity
 should be started at any one time, and if another instance is requested
-the existing instance shown,</li>
-<li><cite>max_participants</cite> - maximum participants for sharing an activity,</li>
-<li><dl class="first docutils">
-<dt><cite>tags</cite> - a semicolon or whitespace delimited list of keywords that</dt>
-<dd>describe the activity. Suggested keywords are Programming,
+the existing instance shown,</p></li>
+<li><p><cite>max_participants</cite> - maximum participants for sharing an activity,</p></li>
+<li><dl class="simple">
+<dt><cite>tags</cite> - a semicolon or whitespace delimited list of keywords that</dt><dd><p>describe the activity. Suggested keywords are Programming,
 Robotics, Internet, Science, Maths, Language, Geography, Game, Documents,
-Music, Media, Art, Teacher, or System,</dd>
+Music, Media, Art, Teacher, or System,</p>
+</dd>
 </dl>
 </li>
-<li><cite>show_launcher</cite> - if set to “no”, the activity is not shown in list view,</li>
+<li><p><cite>show_launcher</cite> - if set to “no”, the activity is not shown in list view,</p></li>
 </ul>
 <p>Deprecated metadata keys are;</p>
 <ul class="simple">
-<li><cite>category</cite> or <cite>categories</cite> - aliases for <cite>tags</cite>,</li>
-<li><cite>website</cite> - alias for <cite>url</cite>,</li>
-<li><cite>update_url</cite> - the updater no longer uses this.</li>
+<li><p><cite>category</cite> or <cite>categories</cite> - aliases for <cite>tags</cite>,</p></li>
+<li><p><cite>website</cite> - alias for <cite>url</cite>,</p></li>
+<li><p><cite>update_url</cite> - the updater no longer uses this.</p></li>
 </ul>
 </div>
 <div class="section" id="appstream-metadata">
@@ -116,17 +117,17 @@ step.</p>
 following metadata fields under the [Activity] header (of the
 <cite>activity.info</cite> file):</p>
 <ul class="simple">
-<li><cite>metadata_license</cite> - license for screenshots and description.  AppStream
+<li><p><cite>metadata_license</cite> - license for screenshots and description.  AppStream
 requests only using one of the following: <cite>CC0-1.0</cite>, <cite>CC-BY-3.0</cite>,
-<cite>CC-BY-SA-3.0</cite> or <cite>GFDL-1.3</cite></li>
-<li><cite>description</cite> - a long (multi paragraph) description of your application.
+<cite>CC-BY-SA-3.0</cite> or <cite>GFDL-1.3</cite></p></li>
+<li><p><cite>description</cite> - a long (multi paragraph) description of your application.
 This must be written in a subset of HTML.  Only the p, ol, ul and li tags
-are supported.</li>
+are supported.</p></li>
 </ul>
 <p>Optional metadata key:</p>
 <ul class="simple">
-<li><cite>screenshots</cite> - a space separated list of screenshot URLs.  PNG or JPEG files
-are supported.</li>
+<li><p><cite>screenshots</cite> - a space separated list of screenshot URLs.  PNG or JPEG files
+are supported.</p></li>
 </ul>
 <div class="section" id="example-activity-info">
 <h4>Example <cite>activity.info</cite><a class="headerlink" href="#example-activity-info" title="Permalink to this headline">¶</a></h4>
@@ -178,6 +179,7 @@ are supported.</li>
 
 
           </div>
+          
         </div>
       </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
@@ -237,17 +239,23 @@ are supported.</li>
 </ul>
 </div>
 <div id="searchbox" style="display: none" role="search">
-  <h3>Quick search</h3>
+  <h3 id="searchlabel">Quick search</h3>
     <div class="searchformwrapper">
     <form class="search" action="search.html" method="get">
-      <input type="text" name="q" />
+      <input type="text" name="q" aria-labelledby="searchlabel" />
       <input type="submit" value="Go" />
-      <input type="hidden" name="check_keywords" value="yes" />
-      <input type="hidden" name="area" value="default" />
     </form>
     </div>
 </div>
-<script type="text/javascript">$('#searchbox').show(0);</script>
+<script>$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
         </div>
       </div>
       <div class="clearer"></div>
@@ -256,8 +264,8 @@ are supported.</li>
       &copy;2017, Sugar Labs.
       
       |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.8.5</a>
-      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.8</a>
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 3.4.3</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
       
       |
       <a href="_sources/sugar3.bundle.rst.txt"

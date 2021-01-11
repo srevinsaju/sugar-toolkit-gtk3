@@ -1,25 +1,24 @@
 
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html>
   <head>
-    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>sugar3.graphics.toolbutton module &#8212; Sugar Toolkit GTK3 0.118 documentation</title>
-    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
-    <script type="text/javascript" src="_static/jquery.js"></script>
-    <script type="text/javascript" src="_static/underscore.js"></script>
-    <script type="text/javascript" src="_static/doctools.js"></script>
-    <script type="text/javascript" src="_static/language_data.js"></script>
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="sugar3.graphics.toolcombobox module" href="sugar3.graphics.toolcombobox.html" />
     <link rel="prev" title="sugar3.graphics.toolbox module" href="sugar3.graphics.toolbox.html" />
    
   <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
   
   <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
 
@@ -29,233 +28,17 @@
     <div class="document">
       <div class="documentwrapper">
         <div class="bodywrapper">
+          
+
           <div class="body" role="main">
             
-  <div class="section" id="module-sugar3.graphics.toolbutton">
-<span id="sugar3-graphics-toolbutton-module"></span><h1>sugar3.graphics.toolbutton module<a class="headerlink" href="#module-sugar3.graphics.toolbutton" title="Permalink to this headline">¶</a></h1>
-<p>The toolbutton module provides the ToolButton class, which is a
-Gtk.ToolButton with icon and tooltip styled for Sugar.</p>
-<p class="rubric">Example</p>
-<p>Add a tool button to a window</p>
-<blockquote>
-<div><p>from gi.repository import Gtk
-from sugar3.graphics.toolbutton import ToolButton</p>
-<dl class="docutils">
-<dt>def __clicked_cb(button):</dt>
-<dd>print(“tool button was clicked”)</dd>
-</dl>
-<p>w = Gtk.Window()
-w.connect(‘destroy’, Gtk.main_quit)
-b = ToolButton(icon_name=’dialog-ok’, tooltip=’a tooltip’)
-b.connect(‘clicked’, __clicked_cb)
-w.add(b)
-w.show_all()</p>
-<p>Gtk.main()</p>
-</div></blockquote>
-<p>STABLE.</p>
-<dl class="class">
-<dt id="sugar3.graphics.toolbutton.ToolButton">
-<em class="property">class </em><code class="descclassname">sugar3.graphics.toolbutton.</code><code class="descname">ToolButton</code><span class="sig-paren">(</span><em>icon_name=None</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#sugar3.graphics.toolbutton.ToolButton" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">gi.overrides.Gtk.ToolButton</span></code></p>
-<p>The ToolButton class manages a Gtk.ToolButton styled for Sugar.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name" colspan="2">Keyword Arguments:</th></tr>
-<tr class="field-odd field"><td>&#160;</td><td class="field-body"><ul class="first last simple">
-<li><strong>icon_name</strong> (<em>string</em>) – name of themed icon.</li>
-<li><strong>accelerator</strong> (<em>string</em>) – keyboard shortcut to be used to
-activate this button.</li>
-<li><strong>tooltip</strong> (<em>string</em>) – tooltip to be displayed when user hovers
-over button.</li>
-<li><strong>hide_tooltip_on_click</strong> (<em>bool</em>) – Whether or not the tooltip
-is hidden when user clicks on button.</li>
-</ul>
-</td>
-</tr>
-</tbody>
-</table>
-<dl class="attribute">
-<dt id="sugar3.graphics.toolbutton.ToolButton.accelerator">
-<code class="descname">accelerator</code><a class="headerlink" href="#sugar3.graphics.toolbutton.ToolButton.accelerator" title="Permalink to this definition">¶</a></dt>
-<dd><p>Return accelerator that activates the button.</p>
-</dd></dl>
-
-<dl class="method">
-<dt id="sugar3.graphics.toolbutton.ToolButton.create_palette">
-<code class="descname">create_palette</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sugar3.graphics.toolbutton.ToolButton.create_palette" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
-<dt id="sugar3.graphics.toolbutton.ToolButton.do_clicked">
-<code class="descname">do_clicked</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sugar3.graphics.toolbutton.ToolButton.do_clicked" title="Permalink to this definition">¶</a></dt>
-<dd><p>Implementation method for hiding the tooltip when
-the button is clicked.</p>
-</dd></dl>
-
-<dl class="method">
-<dt id="sugar3.graphics.toolbutton.ToolButton.do_draw">
-<code class="descname">do_draw</code><span class="sig-paren">(</span><em>cr</em><span class="sig-paren">)</span><a class="headerlink" href="#sugar3.graphics.toolbutton.ToolButton.do_draw" title="Permalink to this definition">¶</a></dt>
-<dd><p>Implementation method for drawing the button.</p>
-</dd></dl>
-
-<dl class="method">
-<dt id="sugar3.graphics.toolbutton.ToolButton.do_get_property">
-<code class="descname">do_get_property</code><span class="sig-paren">(</span><em>pspec</em><span class="sig-paren">)</span><a class="headerlink" href="#sugar3.graphics.toolbutton.ToolButton.do_get_property" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
-<dt id="sugar3.graphics.toolbutton.ToolButton.do_set_property">
-<code class="descname">do_set_property</code><span class="sig-paren">(</span><em>pspec</em>, <em>value</em><span class="sig-paren">)</span><a class="headerlink" href="#sugar3.graphics.toolbutton.ToolButton.do_set_property" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
-<dt id="sugar3.graphics.toolbutton.ToolButton.get_accelerator">
-<code class="descname">get_accelerator</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sugar3.graphics.toolbutton.ToolButton.get_accelerator" title="Permalink to this definition">¶</a></dt>
-<dd><p>Return accelerator that activates the button.</p>
-</dd></dl>
-
-<dl class="method">
-<dt id="sugar3.graphics.toolbutton.ToolButton.get_hide_tooltip_on_click">
-<code class="descname">get_hide_tooltip_on_click</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sugar3.graphics.toolbutton.ToolButton.get_hide_tooltip_on_click" title="Permalink to this definition">¶</a></dt>
-<dd><p>Return True if the tooltip is hidden when a user
-clicks on the button, otherwise return False.</p>
-</dd></dl>
-
-<dl class="method">
-<dt id="sugar3.graphics.toolbutton.ToolButton.get_icon_name">
-<code class="descname">get_icon_name</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sugar3.graphics.toolbutton.ToolButton.get_icon_name" title="Permalink to this definition">¶</a></dt>
-<dd><p>Return icon name, or None if there is no icon name.</p>
-</dd></dl>
-
-<dl class="method">
-<dt id="sugar3.graphics.toolbutton.ToolButton.get_palette">
-<code class="descname">get_palette</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sugar3.graphics.toolbutton.ToolButton.get_palette" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
-<dt id="sugar3.graphics.toolbutton.ToolButton.get_palette_invoker">
-<code class="descname">get_palette_invoker</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sugar3.graphics.toolbutton.ToolButton.get_palette_invoker" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
-<dt id="sugar3.graphics.toolbutton.ToolButton.get_tooltip">
-<code class="descname">get_tooltip</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sugar3.graphics.toolbutton.ToolButton.get_tooltip" title="Permalink to this definition">¶</a></dt>
-<dd><p>Return the tooltip.</p>
-</dd></dl>
-
-<dl class="attribute">
-<dt id="sugar3.graphics.toolbutton.ToolButton.hide_tooltip_on_click">
-<code class="descname">hide_tooltip_on_click</code><a class="headerlink" href="#sugar3.graphics.toolbutton.ToolButton.hide_tooltip_on_click" title="Permalink to this definition">¶</a></dt>
-<dd><p>Return True if the tooltip is hidden when a user
-clicks on the button, otherwise return False.</p>
-</dd></dl>
-
-<dl class="attribute">
-<dt id="sugar3.graphics.toolbutton.ToolButton.icon_name">
-<code class="descname">icon_name</code><a class="headerlink" href="#sugar3.graphics.toolbutton.ToolButton.icon_name" title="Permalink to this definition">¶</a></dt>
-<dd><p>Return icon name, or None if there is no icon name.</p>
-</dd></dl>
-
-<dl class="attribute">
-<dt id="sugar3.graphics.toolbutton.ToolButton.palette">
-<code class="descname">palette</code><a class="headerlink" href="#sugar3.graphics.toolbutton.ToolButton.palette" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="attribute">
-<dt id="sugar3.graphics.toolbutton.ToolButton.palette_invoker">
-<code class="descname">palette_invoker</code><a class="headerlink" href="#sugar3.graphics.toolbutton.ToolButton.palette_invoker" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
-<dt id="sugar3.graphics.toolbutton.ToolButton.set_accelerator">
-<code class="descname">set_accelerator</code><span class="sig-paren">(</span><em>accelerator</em><span class="sig-paren">)</span><a class="headerlink" href="#sugar3.graphics.toolbutton.ToolButton.set_accelerator" title="Permalink to this definition">¶</a></dt>
-<dd><p>Set accelerator that activates the button.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>accelerator</strong> (<em>string</em>) – accelerator to be set.</td>
-</tr>
-</tbody>
-</table>
-</dd></dl>
-
-<dl class="method">
-<dt id="sugar3.graphics.toolbutton.ToolButton.set_hide_tooltip_on_click">
-<code class="descname">set_hide_tooltip_on_click</code><span class="sig-paren">(</span><em>hide_tooltip_on_click</em><span class="sig-paren">)</span><a class="headerlink" href="#sugar3.graphics.toolbutton.ToolButton.set_hide_tooltip_on_click" title="Permalink to this definition">¶</a></dt>
-<dd><p>Set whether or not the tooltip is hidden when a user
-clicks on the button.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>hide_tooltip_on_click</strong> (<em>bool</em>) – True if the tooltip is</li>
-<li><strong>on click</strong><strong>, </strong><strong>and False otherwise.</strong> (<em>hidden</em>) – </li>
-</ul>
-</td>
-</tr>
-</tbody>
-</table>
-</dd></dl>
-
-<dl class="method">
-<dt id="sugar3.graphics.toolbutton.ToolButton.set_icon_name">
-<code class="descname">set_icon_name</code><span class="sig-paren">(</span><em>icon_name</em><span class="sig-paren">)</span><a class="headerlink" href="#sugar3.graphics.toolbutton.ToolButton.set_icon_name" title="Permalink to this definition">¶</a></dt>
-<dd><p>Set name of icon.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>icon_name</strong> (<em>string</em>) – name of icon</td>
-</tr>
-</tbody>
-</table>
-</dd></dl>
-
-<dl class="method">
-<dt id="sugar3.graphics.toolbutton.ToolButton.set_palette">
-<code class="descname">set_palette</code><span class="sig-paren">(</span><em>palette</em><span class="sig-paren">)</span><a class="headerlink" href="#sugar3.graphics.toolbutton.ToolButton.set_palette" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
-<dt id="sugar3.graphics.toolbutton.ToolButton.set_palette_invoker">
-<code class="descname">set_palette_invoker</code><span class="sig-paren">(</span><em>palette_invoker</em><span class="sig-paren">)</span><a class="headerlink" href="#sugar3.graphics.toolbutton.ToolButton.set_palette_invoker" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
-<dt id="sugar3.graphics.toolbutton.ToolButton.set_tooltip">
-<code class="descname">set_tooltip</code><span class="sig-paren">(</span><em>tooltip</em><span class="sig-paren">)</span><a class="headerlink" href="#sugar3.graphics.toolbutton.ToolButton.set_tooltip" title="Permalink to this definition">¶</a></dt>
-<dd><p>Set the tooltip.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>tooltip</strong> (<em>string</em>) – tooltip to be set.</td>
-</tr>
-</tbody>
-</table>
-</dd></dl>
-
-<dl class="attribute">
-<dt id="sugar3.graphics.toolbutton.ToolButton.tooltip">
-<code class="descname">tooltip</code><a class="headerlink" href="#sugar3.graphics.toolbutton.ToolButton.tooltip" title="Permalink to this definition">¶</a></dt>
-<dd><p>Return the tooltip.</p>
-</dd></dl>
-
-</dd></dl>
-
-<dl class="function">
-<dt id="sugar3.graphics.toolbutton.setup_accelerator">
-<code class="descclassname">sugar3.graphics.toolbutton.</code><code class="descname">setup_accelerator</code><span class="sig-paren">(</span><em>tool_button</em><span class="sig-paren">)</span><a class="headerlink" href="#sugar3.graphics.toolbutton.setup_accelerator" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
+  <div class="section" id="sugar3-graphics-toolbutton-module">
+<h1>sugar3.graphics.toolbutton module<a class="headerlink" href="#sugar3-graphics-toolbutton-module" title="Permalink to this headline">¶</a></h1>
 </div>
 
 
           </div>
+          
         </div>
       </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
@@ -335,17 +118,23 @@ clicks on the button.</p>
 </ul>
 </div>
 <div id="searchbox" style="display: none" role="search">
-  <h3>Quick search</h3>
+  <h3 id="searchlabel">Quick search</h3>
     <div class="searchformwrapper">
     <form class="search" action="search.html" method="get">
-      <input type="text" name="q" />
+      <input type="text" name="q" aria-labelledby="searchlabel" />
       <input type="submit" value="Go" />
-      <input type="hidden" name="check_keywords" value="yes" />
-      <input type="hidden" name="area" value="default" />
     </form>
     </div>
 </div>
-<script type="text/javascript">$('#searchbox').show(0);</script>
+<script>$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
         </div>
       </div>
       <div class="clearer"></div>
@@ -354,8 +143,8 @@ clicks on the button.</p>
       &copy;2017, Sugar Labs.
       
       |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.8.5</a>
-      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.8</a>
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 3.4.3</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
       
       |
       <a href="_sources/sugar3.graphics.toolbutton.rst.txt"

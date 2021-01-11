@@ -5,6 +5,7 @@ Submodules
 ----------
 
 .. toctree::
+   :maxdepth: 4
 
    sugar3.activity.activity
    sugar3.activity.activityfactory
@@ -20,6 +21,6 @@ Module contents
 ---------------
 
 .. automodule:: sugar3.activity
-    :members:
-    :undoc-members:
-    :show-inheritance:
+   :members:
+   :undoc-members:
+   :show-inheritance:

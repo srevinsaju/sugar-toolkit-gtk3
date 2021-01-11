@@ -1,25 +1,24 @@
 
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html>
   <head>
-    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>sugar3.graphics.xocolor module &#8212; Sugar Toolkit GTK3 0.118 documentation</title>
-    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
-    <script type="text/javascript" src="_static/jquery.js"></script>
-    <script type="text/javascript" src="_static/underscore.js"></script>
-    <script type="text/javascript" src="_static/doctools.js"></script>
-    <script type="text/javascript" src="_static/language_data.js"></script>
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="sugar3.presence package" href="sugar3.presence.html" />
     <link rel="prev" title="sugar3.graphics.window module" href="sugar3.graphics.window.html" />
    
   <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
   
   <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
 
@@ -29,43 +28,42 @@
     <div class="document">
       <div class="documentwrapper">
         <div class="bodywrapper">
+          
+
           <div class="body" role="main">
             
   <div class="section" id="module-sugar3.graphics.xocolor">
 <span id="sugar3-graphics-xocolor-module"></span><h1>sugar3.graphics.xocolor module<a class="headerlink" href="#module-sugar3.graphics.xocolor" title="Permalink to this headline">¶</a></h1>
 <p>This class represents all of the colors that the XO can take on.
 Each pair of colors represents the fill color and the stroke color</p>
-<dl class="class">
+<dl class="py class">
 <dt id="sugar3.graphics.xocolor.XoColor">
-<em class="property">class </em><code class="descclassname">sugar3.graphics.xocolor.</code><code class="descname">XoColor</code><span class="sig-paren">(</span><em>color_string=None</em><span class="sig-paren">)</span><a class="headerlink" href="#sugar3.graphics.xocolor.XoColor" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-prename descclassname">sugar3.graphics.xocolor.</code><code class="sig-name descname">XoColor</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">color_string</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#sugar3.graphics.xocolor.XoColor" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
 <p>Defines color for XO</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>color_string</strong> (<em>string</em>) – two html format strings separated
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>color_string</strong> (<em>string</em>) – two html format strings separated
 by a comma, “white”, or “insensitive”. If color_string
 is None, the user’s color will be created. If parsed_color
-cannot be created, a random color will be used</td>
-</tr>
-</tbody>
-</table>
-<dl class="method">
+cannot be created, a random color will be used</p>
+</dd>
+</dl>
+<dl class="py method">
 <dt id="sugar3.graphics.xocolor.XoColor.get_fill_color">
-<code class="descname">get_fill_color</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sugar3.graphics.xocolor.XoColor.get_fill_color" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">get_fill_color</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sugar3.graphics.xocolor.XoColor.get_fill_color" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns fill color in standard HTML format (#FFFFFF)</p>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="sugar3.graphics.xocolor.XoColor.get_stroke_color">
-<code class="descname">get_stroke_color</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sugar3.graphics.xocolor.XoColor.get_stroke_color" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">get_stroke_color</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sugar3.graphics.xocolor.XoColor.get_stroke_color" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns stroke color in standard HTML format (#FFFFFF)</p>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="sugar3.graphics.xocolor.XoColor.to_string">
-<code class="descname">to_string</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sugar3.graphics.xocolor.XoColor.to_string" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">to_string</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sugar3.graphics.xocolor.XoColor.to_string" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns a formatted string in the format #STROKEHEX,#FILLHEX</p>
 </dd></dl>
 
@@ -75,6 +73,7 @@ cannot be created, a random color will be used</td>
 
 
           </div>
+          
         </div>
       </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
@@ -154,17 +153,23 @@ cannot be created, a random color will be used</td>
 </ul>
 </div>
 <div id="searchbox" style="display: none" role="search">
-  <h3>Quick search</h3>
+  <h3 id="searchlabel">Quick search</h3>
     <div class="searchformwrapper">
     <form class="search" action="search.html" method="get">
-      <input type="text" name="q" />
+      <input type="text" name="q" aria-labelledby="searchlabel" />
       <input type="submit" value="Go" />
-      <input type="hidden" name="check_keywords" value="yes" />
-      <input type="hidden" name="area" value="default" />
     </form>
     </div>
 </div>
-<script type="text/javascript">$('#searchbox').show(0);</script>
+<script>$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
         </div>
       </div>
       <div class="clearer"></div>
@@ -173,8 +178,8 @@ cannot be created, a random color will be used</td>
       &copy;2017, Sugar Labs.
       
       |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.8.5</a>
-      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.8</a>
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 3.4.3</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
       
       |
       <a href="_sources/sugar3.graphics.xocolor.rst.txt"

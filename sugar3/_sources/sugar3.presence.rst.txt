@@ -5,6 +5,7 @@ Submodules
 ----------
 
 .. toctree::
+   :maxdepth: 4
 
    sugar3.presence.activity
    sugar3.presence.buddy
@@ -17,6 +18,6 @@ Module contents
 ---------------
 
 .. automodule:: sugar3.presence
-    :members:
-    :undoc-members:
-    :show-inheritance:
+   :members:
+   :undoc-members:
+   :show-inheritance:

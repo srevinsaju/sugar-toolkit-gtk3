@@ -1,25 +1,24 @@
 
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html>
   <head>
-    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>sugar3.activity.activityhandle module &#8212; Sugar Toolkit GTK3 0.118 documentation</title>
-    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
-    <script type="text/javascript" src="_static/jquery.js"></script>
-    <script type="text/javascript" src="_static/underscore.js"></script>
-    <script type="text/javascript" src="_static/doctools.js"></script>
-    <script type="text/javascript" src="_static/language_data.js"></script>
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="sugar3.activity.activityinstance module" href="sugar3.activity.activityinstance.html" />
     <link rel="prev" title="sugar3.activity.activityfactory module" href="sugar3.activity.activityfactory.html" />
    
   <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
   
   <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
 
@@ -29,54 +28,53 @@
     <div class="document">
       <div class="documentwrapper">
         <div class="bodywrapper">
+          
+
           <div class="body" role="main">
             
   <div class="section" id="module-sugar3.activity.activityhandle">
 <span id="sugar3-activity-activityhandle-module"></span><h1>sugar3.activity.activityhandle module<a class="headerlink" href="#module-sugar3.activity.activityhandle" title="Permalink to this headline">¶</a></h1>
 <p>Provides a class for storing activity metadata such as activity id’s,
 journal object id’s,</p>
-<dl class="class">
+<dl class="py class">
 <dt id="sugar3.activity.activityhandle.ActivityHandle">
-<em class="property">class </em><code class="descclassname">sugar3.activity.activityhandle.</code><code class="descname">ActivityHandle</code><span class="sig-paren">(</span><em>activity_id=None</em>, <em>object_id=None</em>, <em>uri=None</em>, <em>invited=False</em><span class="sig-paren">)</span><a class="headerlink" href="#sugar3.activity.activityhandle.ActivityHandle" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-prename descclassname">sugar3.activity.activityhandle.</code><code class="sig-name descname">ActivityHandle</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">activity_id</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">object_id</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">uri</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">invited</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="headerlink" href="#sugar3.activity.activityhandle.ActivityHandle" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
 <p>Data structure storing simple activity metadata</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>activity_id</strong> (<em>string</em>) – unique id for the activity to be</li>
-<li><strong>created</strong> – </li>
-<li><strong>object_id</strong> (<em>string</em>) – identity of the journal object</li>
-<li><strong>with the activity.</strong> (<em>associated</em>) – </li>
-<li><strong>you resume an activity from the journal</strong> (<em>When</em>) – </li>
-<li><strong>object_id will be passed in. It is optional</strong> (<em>the</em>) – </li>
-<li><strong>new activities does not have an</strong> (<em>since</em>) – </li>
-<li><strong>object.</strong> (<em>associated</em>) – </li>
-<li><strong>uri</strong> (<em>string</em>) – URI associated with the activity. Used when</li>
-<li><strong>an external file</strong><strong> or </strong><strong>resource in the</strong> (<em>opening</em>) – </li>
-<li><strong>rather than a journal object</strong> (<em>activity</em><em>,</em>) – </li>
-<li><strong>stored on the file system for</strong> (<em>(</em><em>downloads</em>) – </li>
-<li><strong>or web pages</strong><strong>)</strong> (<em>example</em>) – </li>
-<li><strong>invited</strong> (<em>bool</em>) – True if the activity is being</li>
-<li><strong>for handling an invite from the network</strong> (<em>launched</em>) – </li>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>activity_id</strong> (<em>string</em>) – unique id for the activity to be</p></li>
+<li><p><strong>created</strong> – </p></li>
+<li><p><strong>object_id</strong> (<em>string</em>) – identity of the journal object</p></li>
+<li><p><strong>with the activity.</strong> (<em>associated</em>) – </p></li>
+<li><p><strong>you resume an activity from the journal</strong> (<em>When</em>) – </p></li>
+<li><p><strong>object_id will be passed in. It is optional</strong> (<em>the</em>) – </p></li>
+<li><p><strong>new activities does not have an</strong> (<em>since</em>) – </p></li>
+<li><p><strong>object.</strong> (<em>associated</em>) – </p></li>
+<li><p><strong>uri</strong> (<em>string</em>) – URI associated with the activity. Used when</p></li>
+<li><p><strong>an external file</strong><strong> or </strong><strong>resource in the</strong> (<em>opening</em>) – </p></li>
+<li><p><strong>activity</strong> – </p></li>
+<li><p><strong>than a journal object</strong> (<em>rather</em>) – </p></li>
+<li><p><strong>stored on the file system for</strong> (<em>(</em><em>downloads</em>) – </p></li>
+<li><p><strong>or web pages</strong><strong>)</strong> (<em>example</em>) – </p></li>
+<li><p><strong>invited</strong> (<em>bool</em>) – True if the activity is being</p></li>
+<li><p><strong>for handling an invite from the network</strong> (<em>launched</em>) – </p></li>
 </ul>
-</td>
-</tr>
-</tbody>
-</table>
-<dl class="method">
+</dd>
+</dl>
+<dl class="py method">
 <dt id="sugar3.activity.activityhandle.ActivityHandle.get_dict">
-<code class="descname">get_dict</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sugar3.activity.activityhandle.ActivityHandle.get_dict" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">get_dict</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sugar3.activity.activityhandle.ActivityHandle.get_dict" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns activity settings as a dictionary in format
 {activity_id:XXXX, object_id:XXXX, uri:XXXX, invited:BOOL}</p>
 </dd></dl>
 
 </dd></dl>
 
-<dl class="function">
+<dl class="py function">
 <dt id="sugar3.activity.activityhandle.create_from_dict">
-<code class="descclassname">sugar3.activity.activityhandle.</code><code class="descname">create_from_dict</code><span class="sig-paren">(</span><em>handle_dict</em><span class="sig-paren">)</span><a class="headerlink" href="#sugar3.activity.activityhandle.create_from_dict" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">sugar3.activity.activityhandle.</code><code class="sig-name descname">create_from_dict</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">handle_dict</span></em><span class="sig-paren">)</span><a class="headerlink" href="#sugar3.activity.activityhandle.create_from_dict" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns an activity handle from a dictionary of parameters</p>
 </dd></dl>
 
@@ -84,6 +82,7 @@ journal object id’s,</p>
 
 
           </div>
+          
         </div>
       </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
@@ -145,17 +144,23 @@ journal object id’s,</p>
 </ul>
 </div>
 <div id="searchbox" style="display: none" role="search">
-  <h3>Quick search</h3>
+  <h3 id="searchlabel">Quick search</h3>
     <div class="searchformwrapper">
     <form class="search" action="search.html" method="get">
-      <input type="text" name="q" />
+      <input type="text" name="q" aria-labelledby="searchlabel" />
       <input type="submit" value="Go" />
-      <input type="hidden" name="check_keywords" value="yes" />
-      <input type="hidden" name="area" value="default" />
     </form>
     </div>
 </div>
-<script type="text/javascript">$('#searchbox').show(0);</script>
+<script>$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
         </div>
       </div>
       <div class="clearer"></div>
@@ -164,8 +169,8 @@ journal object id’s,</p>
       &copy;2017, Sugar Labs.
       
       |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.8.5</a>
-      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.8</a>
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 3.4.3</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
       
       |
       <a href="_sources/sugar3.activity.activityhandle.rst.txt"
