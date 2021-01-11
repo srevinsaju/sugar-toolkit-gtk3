@@ -46,7 +46,7 @@ package.</p>
 <em class="property">class </em><code class="sig-prename descclassname">sugar3.power.</code><code class="sig-name descname">PowerManager</code><a class="headerlink" href="#sugar3.power.PowerManager" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
 <p>Control of automatic idle suspend, with reference counting.</p>
-<p><code class="xref py py-class docutils literal notranslate"><span class="pre">sugar3.activity.activity.Activity</span></code> calls
+<p><a class="reference internal" href="sugar3.activity.activity.html#sugar3.activity.activity.Activity" title="sugar3.activity.activity.Activity"><code class="xref py py-class docutils literal notranslate"><span class="pre">sugar3.activity.activity.Activity</span></code></a> calls
 <a class="reference internal" href="#sugar3.power.PowerManager.inhibit_suspend" title="sugar3.power.PowerManager.inhibit_suspend"><code class="xref py py-meth docutils literal notranslate"><span class="pre">inhibit_suspend()</span></code></a> before speaking text, or when an
 activity collaboration begins.</p>
 <p>Activities may call <a class="reference internal" href="#sugar3.power.PowerManager.inhibit_suspend" title="sugar3.power.PowerManager.inhibit_suspend"><code class="xref py py-meth docutils literal notranslate"><span class="pre">inhibit_suspend()</span></code></a> before playing
@@ -55,7 +55,7 @@ waiting for response to network operations.</p>
 <p>As an example, the Clock activity inhibits automatic idle suspend
 while it is active, so that the displayed clock-face continues to
 change.  Otherwise it would freeze.</p>
-<p><code class="xref py py-class docutils literal notranslate"><span class="pre">sugar3.activity.activity.Activity</span></code> calls
+<p><a class="reference internal" href="sugar3.activity.activity.html#sugar3.activity.activity.Activity" title="sugar3.activity.activity.Activity"><code class="xref py py-class docutils literal notranslate"><span class="pre">sugar3.activity.activity.Activity</span></code></a> calls
 <a class="reference internal" href="#sugar3.power.PowerManager.shutdown" title="sugar3.power.PowerManager.shutdown"><code class="xref py py-meth docutils literal notranslate"><span class="pre">shutdown()</span></code></a> as an activity terminates, in case the
 activity has failed to call <a class="reference internal" href="#sugar3.power.PowerManager.restore_suspend" title="sugar3.power.PowerManager.restore_suspend"><code class="xref py py-meth docutils literal notranslate"><span class="pre">restore_suspend()</span></code></a>.</p>
 <p>While automatic idle suspend is inhibited, <em>powerd</em> will
