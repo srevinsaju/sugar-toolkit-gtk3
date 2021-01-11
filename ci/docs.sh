@@ -21,8 +21,11 @@ then
     git clone https://aur.archlinux.org/sugar-toolkit-gtk3-git.git
     cd sugar-toolkit-gtk3-git
     makepkg -sif --noconfirm 
+    show-green "Installing optional dependencies"
+    yes | sudo pacman -S --needed $(cat .SRCINFO| grep 'optdepends' | grep -o '= .*:' | sed 's,= ,,g' | sed 's,:,,g') --noconfirm
     cd ../..
     show-green "Dependencies synced, packages built"
+
 fi
 
 
