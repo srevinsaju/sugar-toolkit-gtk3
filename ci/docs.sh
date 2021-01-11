@@ -20,7 +20,7 @@ then
     cd .cache 
     git clone https://aur.archlinux.org/sugar-toolkit-gtk3-git.git
     cd sugar-toolkit-gtk3-git
-    makepkg -s 
+    makepkg -s --noconfirm 
     cd ../..
     show-green "Dependencies synced, packages built"
 fi
